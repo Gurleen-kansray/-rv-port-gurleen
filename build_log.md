@@ -25,3 +25,17 @@ Only harmless upstream warnings (sign-compare, Fortran 2018 style in SparsKit).
 **Result:** Same source compiles for x86 (SSE2) and riscv64 (scalar fallback).
 Both produce dot(a,b) = 70.0. Zero warnings after fix.
 RVV intrinsic backend planned for summer.
+
+## SPOOLES 2.2 — riscv64 ✅
+
+**Date:** 2025-05-07  
+**Source:** http://www.netlib.org/linalg/spooles/spooles.2.2.tgz  
+**Build command:**
+make CC=riscv64-linux-gnu-gcc AR=riscv64-linux-gnu-ar 
+RANLIB=riscv64-linux-gnu-ranlib CFLAGS="-O2 -fcommon" lib
+**Result:** spooles.a — 5.1MB, 291 object files  
+**Fix required:** `-fcommon` flag for tentative definition conflicts (standard for old C codebases on GCC 10+)  
+**Warnings:** format string `%d` vs `size_t` in MM.h — harmless, build succeeds  
+**Validation:**
+qemu-riscv64-static -L /usr/riscv64-linux-gnu ./test_spooles_riscv
+SPOOLES riscv64 link test PASSED

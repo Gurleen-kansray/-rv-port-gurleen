@@ -39,3 +39,19 @@ RANLIB=riscv64-linux-gnu-ranlib CFLAGS="-O2 -fcommon" lib
 **Validation:**
 qemu-riscv64-static -L /usr/riscv64-linux-gnu ./test_spooles_riscv
 SPOOLES riscv64 link test PASSED
+
+## .deb Packaging — riscv64 ✅
+
+**Date:** 2026-05-07
+
+### getdp_4.0.0_riscv64.deb
+- Size: 4.8MB
+- Binary: /usr/bin/getdp
+- Architecture: riscv64
+- Built with: dpkg-deb + fakeroot
+
+### spooles_2.2_riscv64.deb  
+- Size: 827KB
+- Library: /usr/lib/spooles.a
+- Architecture: riscv64
+- Fix applied: -fcommon for GCC 10+ compatibility

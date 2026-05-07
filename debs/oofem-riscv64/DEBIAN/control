@@ -1,0 +1,9 @@
+Package: oofem
+Version: 2.6
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: OOFEM finite element solver — riscv64 cross-compiled
+ Object Oriented Finite Element Method solver. Cross-compiled for riscv64.
+ Validated: NR solver converged to 1.312e-16 under qemu-riscv64-static.
+ Part of LFX RISC-V HPC porting effort.
+Depends: libc6

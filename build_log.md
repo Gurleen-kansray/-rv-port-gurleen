@@ -55,3 +55,15 @@ SPOOLES riscv64 link test PASSED
 - Library: /usr/lib/spooles.a
 - Architecture: riscv64
 - Fix applied: -fcommon for GCC 10+ compatibility
+
+## OOFEM 2.6 — riscv64 ✅
+
+**Date:** 2026-05-07
+**Source:** https://github.com/oofem/oofem
+**Build:** CMake cross-compilation, tests disabled (Catch2 not needed for solver)
+**Fix applied:** Commented out extern/catch2 and tests subdirectories in CMakeLists.txt
+**Validation:**
+- Binary confirmed: `qemu-riscv64-static ./oofem --version` → OOFEM 2.6
+- Solver run: truss2d_01.in, NR converged to **1.312e-16** in 1 iteration
+- Zero errors, zero warnings
+**Package:** oofem_2.6_riscv64.deb

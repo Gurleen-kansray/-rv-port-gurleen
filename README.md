@@ -1,37 +1,80 @@
-# rv-port-gurleen
+# RISC-V HPC Portability — PoC
 
-RISC-V cross-compilation PoC — LFX Summer 2026 mentorship:
-**"Broadening the RISC-V High Precision Code Base and Reach"**
+Cross-compilation pipeline for riscv64 HPC codes.  
+LFX Mentorship 2026 — Broadening the RISC-V High Precision Code Base and Reach  
+**Gurleen Kaur Kansray** | gurleen72542@gmail.com
 
-## Results
+---
 
-| Code | Version | Status | Notes |
-|------|---------|--------|-------|
-| GetDP | 4.0.0-git-f060307e | ✅ Full build + solver run | 8 iterations, residual 8.2729e-13 |
-| SIMD shim | — | ✅ Working | SSE2 on x86, scalar on riscv64, identical output |
+## Validated Ports
 
-## What this proves
+| Package | Version | Test Problem | Result |
+|---|---|---|---|
+| GetDP | 4.0.0 | Magnetostatics, 1554 DOFs, GMRES+ILUTP | residual 8.2729e-13 ✅ |
+| OOFEM | 2.6 | Structural mechanics, Newton-Raphson | converged 1.312e-16 ✅ |
+| SPOOLES | 2.2 | Sparse direct solver, 291 object files | PASSED ✅ |
+| ARPACK-ng | 3.9.1 | All 17 drivers (dsbdr/dndrv/dsdrv) | worst residual 1.40e-13 ✅ |
+| CalculiX | 2.21 | FEM solver, achtel2 test problem | Job finished 0.405768s ✅ |
+| OpenBLAS | 0.3.33 | TARGET=RISCV64_GENERIC | built, ~80 codes unblocked ✅ |
 
-- riscv64 cross-compilation toolchain working on WSL2/Windows
-- CMake-based HPC code builds cleanly for riscv64
-- GMRES solver converges correctly on RISC-V — not just a binary that
-  starts, but one that solves a real magnetostatics FEM problem to
-  8.2729e-13 residual with full post-processing output
-- Portable SIMD abstraction layer compiles same source for both architectures
+All binaries validated under `qemu-riscv64-static`.  
+All packaged as installable `.deb` files with `Architecture: riscv64`.
 
-## Setup (Ubuntu 24.04 / WSL2)
+---
+
+## Dependency Chain
+
+- OpenBLAS 0.3.33 ✅
+  - ARPACK-ng 3.9.1 ✅
+- SPOOLES 2.2 ✅
+  - CalculiX 2.21 ✅ — both blockers resolved
+
+---
+
+## Repository Layout
+
+- toolchain/riscv64-linux-gnu.cmake — cross-compilation toolchain file
+- hal/simd.h — portable SIMD shim (SSE2 + scalar fallback + RVV planned)
+- spooles/spooles.a — SPOOLES 2.2 riscv64 static library
+- debs/
+  - getdp_4.0.0_riscv64.deb
+  - oofem_2.6_riscv64.deb
+  - spooles_2.2_riscv64.deb
+  - arpack-ng_3.9.1_riscv64.deb
+  - calculix-ccx_2.21_riscv64.deb
+  - libopenblas_0.3.33_riscv64.deb
+
+---
+
+## Toolchain
+
+- CC: riscv64-linux-gnu-gcc 13.3.0
+- FC: riscv64-linux-gnu-gfortran 13.3.0
+- Emulator: qemu-riscv64-static
 
 ```bash
-sudo apt install gcc-riscv64-linux-gnu g++-riscv64-linux-gnu \
-  gfortran-riscv64-linux-gnu qemu-user-static binfmt-support \
-  cmake make build-essential
-
-export QEMU_LD_PREFIX=/usr/riscv64-linux-gnu
+cmake .. -DCMAKE_TOOLCHAIN_FILE=toolchain/riscv64-linux-gnu.cmake
+qemu-riscv64-static -L /usr/riscv64-linux-gnu ./binary
 ```
 
-## Repo structure
-riscv64-toolchain.cmake   CMake toolchain file for riscv64 cross-compilation
-scripts/build-riscv.sh    Wrapper to cross-compile any CMake project
-hal/                      Portable SIMD shim (SSE2/riscv64/scalar)
-getdp/                    GetDP source + build-riscv/
-build_log.md              Detailed notes from actual runs
+---
+
+## Known Issues and Fixes
+
+| Code | Issue | Fix |
+|---|---|---|
+| SPOOLES 2.2 | GCC 10+ tentative definition handling | -fcommon flag |
+| CalculiX 2.21 | SPOOLES header path | -I pointing to full SPOOLES source |
+| ARPACK-ng | riscv64 not on archive.ubuntu.com | cross-compile from source |
+| OpenBLAS | -march=native breaks cross-compile | TARGET=RISCV64_GENERIC |
+
+---
+
+## HAL SIMD Shim
+
+hal/simd.h provides architecture-transparent SIMD — zero #ifdefs in application code.
+
+| Architecture | Backend |
+|---|---|
+| x86_64 | SSE2 intrinsics |
+| riscv64 | Scalar fallback (RVV backend planned Weeks 6-8) |

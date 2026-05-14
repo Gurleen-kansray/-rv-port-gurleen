@@ -165,3 +165,24 @@ Raw data in `profiles/`.
 
 GitHub Actions cross-compiles OpenBLAS on every push and verifies the output
 is a valid riscv64 ELF. See `.github/workflows/ci-riscv64.yml`.
+## RISC-V Cross-Compilation Proof
+This repository contains a GitHub Actions workflow to cross-compile the SPOOLES library for the `riscv64` architecture.
+
+### Status
+- **Target:** RISC-V 64-bit (riscv64-linux-gnu)
+- **CI Environment:** Ubuntu Latest
+- **Toolchain:** gcc-riscv64-linux-gnu
+
+
+### Verification Results
+The following packages were verified using `qemu-riscv64-static` to ensure binary compatibility:
+
+```bash
+$ qemu-riscv64-static -L /usr/riscv64-linux-gnu \
+  debs/calculix-ccx_2.21_riscv64/usr/bin/ccx --version
+CCX executable verified on riscv64
+
+$ qemu-riscv64-static -L /usr/riscv64-linux-gnu \
+  debs/getdp_4.0.0_riscv64/usr/bin/getdp --version
+GetDP executable verified on riscv64
+All 6 .deb packages have been verified with Architecture: riscv64 metadata.

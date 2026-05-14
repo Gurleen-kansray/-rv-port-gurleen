@@ -186,8 +186,8 @@ $ qemu-riscv64-static -L /usr/riscv64-linux-gnu \
   debs/getdp_4.0.0_riscv64/usr/bin/getdp --version
 GetDP executable verified on riscv64
 All 6 .deb packages have been verified with Architecture: riscv64 metadata.
-
-## Downstream Impact Analysis
+```
+### Downstream Impact Analysis
 
 | Package | Direct Unblocks | Cascading Effect | Total Impact |
 |---------|-----------------|------------------|--------------|
@@ -200,7 +200,7 @@ All 6 .deb packages have been verified with Architecture: riscv64 metadata.
 
 **Total validated reach: 155+ codes from 400-code target**
 
-## Competitive Position (vs. Other LFX Applicants)
+### Competitive Position (vs. Other LFX Applicants)
 
 **What separates this work:**
 - Most validated .debs (6 vs. competitors' 1-2)

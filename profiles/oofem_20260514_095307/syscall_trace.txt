@@ -1,0 +1,241 @@
+Attaching 348 probes...
+09:53:08 @total: 4528
+09:53:09 @total: 560
+09:53:10 @total: 84
+09:53:29 @total: 2796
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+09:53:29 @total: 0
+
+=== Syscall Profile ===
+@syscalls[tracepoint:syscalls:sys_enter_bind]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getsockname]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setsid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_mremap]: 1
+@syscalls[tracepoint:syscalls:sys_enter_madvise]: 1
+@syscalls[tracepoint:syscalls:sys_enter_sysinfo]: 1
+@syscalls[tracepoint:syscalls:sys_enter_ftruncate]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setgid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_chown]: 1
+@syscalls[tracepoint:syscalls:sys_enter_pwrite64]: 1
+@syscalls[tracepoint:syscalls:sys_enter_fstatfs]: 1
+@syscalls[tracepoint:syscalls:sys_enter_faccessat2]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getppid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getpriority]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getsid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_clone3]: 1
+@syscalls[tracepoint:syscalls:sys_enter_close_range]: 1
+@syscalls[tracepoint:syscalls:sys_enter_capset]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setpriority]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setpgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getresgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_lgetxattr]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getgroups]: 2
+@syscalls[tracepoint:syscalls:sys_enter_socketpair]: 2
+@syscalls[tracepoint:syscalls:sys_enter_capget]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getresuid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getsockopt]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getpgrp]: 2
+@syscalls[tracepoint:syscalls:sys_enter_utimensat]: 2
+@syscalls[tracepoint:syscalls:sys_enter_epoll_ctl]: 2
+@syscalls[tracepoint:syscalls:sys_enter_statfs]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getpgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_dup3]: 3
+@syscalls[tracepoint:syscalls:sys_enter_newuname]: 3
+@syscalls[tracepoint:syscalls:sys_enter_getcwd]: 3
+@syscalls[tracepoint:syscalls:sys_enter_pipe2]: 3
+@syscalls[tracepoint:syscalls:sys_enter_setsockopt]: 4
+@syscalls[tracepoint:syscalls:sys_enter_clock_adjtime]: 4
+@syscalls[tracepoint:syscalls:sys_enter_set_tid_address]: 4
+@syscalls[tracepoint:syscalls:sys_enter_epoll_pwait2]: 4
+@syscalls[tracepoint:syscalls:sys_enter_kill]: 4
+@syscalls[tracepoint:syscalls:sys_enter_pidfd_open]: 4
+@syscalls[tracepoint:syscalls:sys_enter_waitid]: 4
+@syscalls[tracepoint:syscalls:sys_enter_arch_prctl]: 4
+@syscalls[tracepoint:syscalls:sys_enter_unlink]: 4
+@syscalls[tracepoint:syscalls:sys_enter_execve]: 4
+@syscalls[tracepoint:syscalls:sys_enter_umask]: 4
+@syscalls[tracepoint:syscalls:sys_enter_setgroups]: 5
+@syscalls[tracepoint:syscalls:sys_enter_clone]: 5
+@syscalls[tracepoint:syscalls:sys_enter_rseq]: 5
+@syscalls[tracepoint:syscalls:sys_enter_sendmsg]: 5
+@syscalls[tracepoint:syscalls:sys_enter_open]: 5
+@syscalls[tracepoint:syscalls:sys_enter_timerfd_settime]: 6
+@syscalls[tracepoint:syscalls:sys_enter_getdents64]: 6
+@syscalls[tracepoint:syscalls:sys_enter_ppoll]: 7
+@syscalls[tracepoint:syscalls:sys_enter_connect]: 7
+@syscalls[tracepoint:syscalls:sys_enter_getgid]: 7
+@syscalls[tracepoint:syscalls:sys_enter_clock_nanosleep]: 8
+@syscalls[tracepoint:syscalls:sys_enter_getrandom]: 8
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigreturn]: 8
+@syscalls[tracepoint:syscalls:sys_enter_getegid]: 8
+@syscalls[tracepoint:syscalls:sys_enter_exit_group]: 8
+@syscalls[tracepoint:syscalls:sys_enter_geteuid]: 9
+@syscalls[tracepoint:syscalls:sys_enter_inotify_add_watch]: 9
+@syscalls[tracepoint:syscalls:sys_enter_setresgid]: 9
+@syscalls[tracepoint:syscalls:sys_enter_set_robust_list]: 10
+@syscalls[tracepoint:syscalls:sys_enter_getpid]: 10
+@syscalls[tracepoint:syscalls:sys_enter_readlinkat]: 11
+@syscalls[tracepoint:syscalls:sys_enter_wait4]: 11
+@syscalls[tracepoint:syscalls:sys_enter_getuid]: 13
+@syscalls[tracepoint:syscalls:sys_enter_prctl]: 13
+@syscalls[tracepoint:syscalls:sys_enter_setresuid]: 14
+@syscalls[tracepoint:syscalls:sys_enter_write]: 16
+@syscalls[tracepoint:syscalls:sys_enter_poll]: 16
+@syscalls[tracepoint:syscalls:sys_enter_socket]: 16
+@syscalls[tracepoint:syscalls:sys_enter_gettid]: 17
+@syscalls[tracepoint:syscalls:sys_enter_brk]: 21
+@syscalls[tracepoint:syscalls:sys_enter_munmap]: 23
+@syscalls[tracepoint:syscalls:sys_enter_nanosleep]: 25
+@syscalls[tracepoint:syscalls:sys_enter_readlink]: 40
+@syscalls[tracepoint:syscalls:sys_enter_mprotect]: 44
+@syscalls[tracepoint:syscalls:sys_enter_epoll_wait]: 47
+@syscalls[tracepoint:syscalls:sys_enter_lseek]: 50
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigprocmask]: 56
+@syscalls[tracepoint:syscalls:sys_enter_pselect6]: 57
+@syscalls[tracepoint:syscalls:sys_enter_pread64]: 62
+@syscalls[tracepoint:syscalls:sys_enter_unlinkat]: 62
+@syscalls[tracepoint:syscalls:sys_enter_newfstatat]: 62
+@syscalls[tracepoint:syscalls:sys_enter_alarm]: 69
+@syscalls[tracepoint:syscalls:sys_enter_prlimit64]: 69
+@syscalls[tracepoint:syscalls:sys_enter_futex]: 107
+@syscalls[tracepoint:syscalls:sys_enter_fcntl]: 108
+@syscalls[tracepoint:syscalls:sys_enter_sendto]: 153
+@syscalls[tracepoint:syscalls:sys_enter_perf_event_open]: 155
+@syscalls[tracepoint:syscalls:sys_enter_newfstat]: 194
+@syscalls[tracepoint:syscalls:sys_enter_mmap]: 211
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigaction]: 212
+@syscalls[tracepoint:syscalls:sys_enter_recvmsg]: 256
+@syscalls[tracepoint:syscalls:sys_enter_recvfrom]: 287
+@syscalls[tracepoint:syscalls:sys_enter_dup]: 316
+@syscalls[tracepoint:syscalls:sys_enter_read]: 359
+@syscalls[tracepoint:syscalls:sys_enter_access]: 372
+@syscalls[tracepoint:syscalls:sys_enter_openat]: 570
+@syscalls[tracepoint:syscalls:sys_enter_dup2]: 634
+@syscalls[tracepoint:syscalls:sys_enter_ioctl]: 671
+@syscalls[tracepoint:syscalls:sys_enter_bpf]: 740
+@syscalls[tracepoint:syscalls:sys_enter_close]: 1584
+
+
+@syscalls[tracepoint:syscalls:sys_enter_bind]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getsockname]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setsid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_mremap]: 1
+@syscalls[tracepoint:syscalls:sys_enter_madvise]: 1
+@syscalls[tracepoint:syscalls:sys_enter_sysinfo]: 1
+@syscalls[tracepoint:syscalls:sys_enter_ftruncate]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setgid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_chown]: 1
+@syscalls[tracepoint:syscalls:sys_enter_pwrite64]: 1
+@syscalls[tracepoint:syscalls:sys_enter_fstatfs]: 1
+@syscalls[tracepoint:syscalls:sys_enter_faccessat2]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getppid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getpriority]: 1
+@syscalls[tracepoint:syscalls:sys_enter_getsid]: 1
+@syscalls[tracepoint:syscalls:sys_enter_clone3]: 1
+@syscalls[tracepoint:syscalls:sys_enter_close_range]: 1
+@syscalls[tracepoint:syscalls:sys_enter_capset]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setpriority]: 1
+@syscalls[tracepoint:syscalls:sys_enter_setpgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getresgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_lgetxattr]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getgroups]: 2
+@syscalls[tracepoint:syscalls:sys_enter_socketpair]: 2
+@syscalls[tracepoint:syscalls:sys_enter_capget]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getresuid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getsockopt]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getpgrp]: 2
+@syscalls[tracepoint:syscalls:sys_enter_utimensat]: 2
+@syscalls[tracepoint:syscalls:sys_enter_epoll_ctl]: 2
+@syscalls[tracepoint:syscalls:sys_enter_statfs]: 2
+@syscalls[tracepoint:syscalls:sys_enter_getpgid]: 2
+@syscalls[tracepoint:syscalls:sys_enter_dup3]: 3
+@syscalls[tracepoint:syscalls:sys_enter_newuname]: 3
+@syscalls[tracepoint:syscalls:sys_enter_getcwd]: 3
+@syscalls[tracepoint:syscalls:sys_enter_pipe2]: 3
+@syscalls[tracepoint:syscalls:sys_enter_setsockopt]: 4
+@syscalls[tracepoint:syscalls:sys_enter_clock_adjtime]: 4
+@syscalls[tracepoint:syscalls:sys_enter_set_tid_address]: 4
+@syscalls[tracepoint:syscalls:sys_enter_epoll_pwait2]: 4
+@syscalls[tracepoint:syscalls:sys_enter_kill]: 4
+@syscalls[tracepoint:syscalls:sys_enter_pidfd_open]: 4
+@syscalls[tracepoint:syscalls:sys_enter_waitid]: 4
+@syscalls[tracepoint:syscalls:sys_enter_arch_prctl]: 4
+@syscalls[tracepoint:syscalls:sys_enter_unlink]: 4
+@syscalls[tracepoint:syscalls:sys_enter_execve]: 4
+@syscalls[tracepoint:syscalls:sys_enter_umask]: 4
+@syscalls[tracepoint:syscalls:sys_enter_setgroups]: 5
+@syscalls[tracepoint:syscalls:sys_enter_clone]: 5
+@syscalls[tracepoint:syscalls:sys_enter_rseq]: 5
+@syscalls[tracepoint:syscalls:sys_enter_sendmsg]: 5
+@syscalls[tracepoint:syscalls:sys_enter_open]: 5
+@syscalls[tracepoint:syscalls:sys_enter_timerfd_settime]: 6
+@syscalls[tracepoint:syscalls:sys_enter_getdents64]: 6
+@syscalls[tracepoint:syscalls:sys_enter_ppoll]: 7
+@syscalls[tracepoint:syscalls:sys_enter_connect]: 7
+@syscalls[tracepoint:syscalls:sys_enter_getgid]: 7
+@syscalls[tracepoint:syscalls:sys_enter_clock_nanosleep]: 8
+@syscalls[tracepoint:syscalls:sys_enter_getrandom]: 8
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigreturn]: 8
+@syscalls[tracepoint:syscalls:sys_enter_getegid]: 8
+@syscalls[tracepoint:syscalls:sys_enter_exit_group]: 8
+@syscalls[tracepoint:syscalls:sys_enter_geteuid]: 9
+@syscalls[tracepoint:syscalls:sys_enter_inotify_add_watch]: 9
+@syscalls[tracepoint:syscalls:sys_enter_setresgid]: 9
+@syscalls[tracepoint:syscalls:sys_enter_set_robust_list]: 10
+@syscalls[tracepoint:syscalls:sys_enter_getpid]: 10
+@syscalls[tracepoint:syscalls:sys_enter_readlinkat]: 11
+@syscalls[tracepoint:syscalls:sys_enter_wait4]: 11
+@syscalls[tracepoint:syscalls:sys_enter_getuid]: 13
+@syscalls[tracepoint:syscalls:sys_enter_prctl]: 13
+@syscalls[tracepoint:syscalls:sys_enter_setresuid]: 14
+@syscalls[tracepoint:syscalls:sys_enter_write]: 16
+@syscalls[tracepoint:syscalls:sys_enter_poll]: 16
+@syscalls[tracepoint:syscalls:sys_enter_socket]: 16
+@syscalls[tracepoint:syscalls:sys_enter_gettid]: 17
+@syscalls[tracepoint:syscalls:sys_enter_brk]: 21
+@syscalls[tracepoint:syscalls:sys_enter_munmap]: 23
+@syscalls[tracepoint:syscalls:sys_enter_nanosleep]: 25
+@syscalls[tracepoint:syscalls:sys_enter_readlink]: 40
+@syscalls[tracepoint:syscalls:sys_enter_mprotect]: 44
+@syscalls[tracepoint:syscalls:sys_enter_epoll_wait]: 47
+@syscalls[tracepoint:syscalls:sys_enter_lseek]: 50
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigprocmask]: 56
+@syscalls[tracepoint:syscalls:sys_enter_pselect6]: 57
+@syscalls[tracepoint:syscalls:sys_enter_pread64]: 62
+@syscalls[tracepoint:syscalls:sys_enter_unlinkat]: 62
+@syscalls[tracepoint:syscalls:sys_enter_newfstatat]: 62
+@syscalls[tracepoint:syscalls:sys_enter_alarm]: 69
+@syscalls[tracepoint:syscalls:sys_enter_prlimit64]: 69
+@syscalls[tracepoint:syscalls:sys_enter_futex]: 107
+@syscalls[tracepoint:syscalls:sys_enter_fcntl]: 108
+@syscalls[tracepoint:syscalls:sys_enter_sendto]: 153
+@syscalls[tracepoint:syscalls:sys_enter_perf_event_open]: 155
+@syscalls[tracepoint:syscalls:sys_enter_newfstat]: 194
+@syscalls[tracepoint:syscalls:sys_enter_mmap]: 211
+@syscalls[tracepoint:syscalls:sys_enter_rt_sigaction]: 212
+@syscalls[tracepoint:syscalls:sys_enter_recvmsg]: 256
+@syscalls[tracepoint:syscalls:sys_enter_recvfrom]: 287
+@syscalls[tracepoint:syscalls:sys_enter_dup]: 316
+@syscalls[tracepoint:syscalls:sys_enter_read]: 359
+@syscalls[tracepoint:syscalls:sys_enter_access]: 372
+@syscalls[tracepoint:syscalls:sys_enter_openat]: 570
+@syscalls[tracepoint:syscalls:sys_enter_dup2]: 634
+@syscalls[tracepoint:syscalls:sys_enter_ioctl]: 671
+@syscalls[tracepoint:syscalls:sys_enter_bpf]: 740
+@syscalls[tracepoint:syscalls:sys_enter_close]: 1584
+@total: 0

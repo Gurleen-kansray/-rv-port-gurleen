@@ -1,0 +1,36 @@
+GetDP, a General environment for the treatment of Discrete Problems
+Copyright (C) 1997-2026 P. Dular and C. Geuzaine, University of Liege
+Usage: debs/getdp-riscv64/usr/bin/getdp [file] [options]
+Processing options:
+  -pre 'Resolution'         pre-processing
+  -cal                      processing
+  -pos 'PostOperation(s)'   post-processing
+  -msh file                 read mesh (in msh format) from file
+  -msh_scaling value        scale the input mesh by the given value
+  -gmshread file(s)         read gmsh data (same as GmshRead in resolution)
+  -gmshtag tag(s)           tag(s) associated to GmshRead data
+  -restart                  resume processing from where it stopped
+  -solve 'Resolution'       same as -pre 'Resolution' -cal
+  -split                    save processing results in separate files
+  -res file(s)              load processing results from file(s)
+  -name string              use string as generic file name
+  -adapt file               read adaptation constraints from file
+  -order num                restrict maximum interpolation order
+  -cache                    cache network computations to disk
+Linear solver options:
+  -solver file              specify parameter file (default: solver.par)
+  -'Parameter' num          override value of solver parameter 'Parameter'
+Output options:
+  -bin                      create binary output files
+  -v2                       create mesh-based Gmsh output files when possible
+Other options:
+  -check                    interactive check of problem structure
+  -v num                    set verbosity level (default: 5)
+  -cpu                      report CPU times for all operations
+  -p num                    set progress indicator update (default: 10)
+  -onelab name [address]    communicate with ONELAB (file or server address)
+  -setnumber name value     set constant number name=value (or -sn)
+  -setstring name value     set constant string name=value (or -ss)
+  -version                  show version number
+  -info                     show detailed version information
+  -help                     show this message

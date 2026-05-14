@@ -1,35 +1,31 @@
-name: riscv64 Cross-Compile CI
+name: Cross-compile RISC-V riscv64
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push, pull_request]
 
 jobs:
-  cross-compile-openblas:
-    name: Cross-compile OpenBLAS to riscv64
-    runs-on: ubuntu-24.04
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install cross-toolchain
+      - name: Install cross-compilation toolchain
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y gcc-riscv64-linux-gnu g++-riscv64-linux-gnu gfortran-riscv64-linux-gnu qemu-user-static
+          sudo dpkg --add-architecture riscv64
+          sudo apt-get install -qq riscv64-linux-gnu-gcc riscv64-linux-gnu-gfortran cmake
 
-      - name: Build OpenBLAS riscv64
+      - name: Setup riscv64 ports mirror
         run: |
-          git clone --depth 1 --branch v0.3.33 https://github.com/OpenMathLib/OpenBLAS.git
-          cd OpenBLAS
-          make CROSS=1 TARGET=RISCV64_GENERIC NO_SHARED=1 CC=riscv64-linux-gnu-gcc FC=riscv64-linux-gnu-gfortran -j$(nproc)
-          make PREFIX=$(pwd)/build-riscv install CROSS=1 TARGET=RISCV64_GENERIC NO_SHARED=1 CC=riscv64-linux-gnu-gcc FC=riscv64-linux-gnu-gfortran
+          echo "deb [arch=riscv64] http://ports.ubuntu.com/ubuntu-ports noble main restricted universe multiverse" \
+            | sudo tee /etc/apt/sources.list.d/ubuntu-ports-riscv64.list
+          sudo apt-get update -qq
 
-      - name: Verify ELF architecture
+      - name: Build SPOOLES riscv64
         run: |
-          file OpenBLAS/build-riscv/lib/libopenblas.a | grep -q "RISC-V" && echo "riscv64 confirmed" || exit 1
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: openblas-riscv64
-          path: OpenBLAS/build-riscv/lib/libopenblas.a
+          mkdir -p /tmp/build-spooles && cd /tmp/build-spooles
+          wget -q http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
+          tar xf spooles.2.2.tgz && cd spooles.2.2
+          sed -i 's/^CC =.*/CC = riscv64-linux-gnu-gcc/' Make.inc
+          sed -i 's/^CFLAGS =.*/CFLAGS = -O2 -fcommon/' Make.inc
+make lib
+      # Optional: Add steps here to run tests or upload artifacts

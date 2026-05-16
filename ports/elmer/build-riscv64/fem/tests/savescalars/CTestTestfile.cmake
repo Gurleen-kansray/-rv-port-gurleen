@@ -1,0 +1,8 @@
+# CMake generated Testfile for 
+# Source directory: /home/acer/risc-v-hpc/ports/elmer/fem/tests/savescalars
+# Build directory: /home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/savescalars
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(savescalars "/usr/bin/cmake" "-DCMAKE_MODULE_PATH=/home/acer/risc-v-hpc/ports/elmer/cmake/Modules" "/usr/share/cmake-3.28/Modules" "-DELMERGRID_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/elmergrid/src/ElmerGrid" "-DELMERSOLVER_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/src/ElmerSolver" "-DFINDNORM_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/findnorm" "-DMESH2D_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/meshgen2d/src/Mesh2D" "-DTEST_SOURCE=/home/acer/risc-v-hpc/ports/elmer/fem/tests/savescalars" "-DPROJECT_SOURCE_DIR=/home/acer/risc-v-hpc/ports/elmer/fem/tests" "-DBINARY_DIR=/home/acer/risc-v-hpc/ports/elmer/build-riscv64" "-DCMAKE_Fortran_COMPILER=/usr/bin/riscv64-linux-gnu-gfortran" "-DMPIEXEC=" "-DMPIEXEC_NUMPROC_FLAG=" "-DMPIEXEC_PREFLAGS=" "-DMPIEXEC_POSTFLAGS=" "-DWITH_MPI=OFF" "-DMPIEXEC_NTASKS=1" "-P" "/home/acer/risc-v-hpc/ports/elmer/fem/tests/savescalars/runtest.cmake")
+set_tests_properties(savescalars PROPERTIES  LABELS "serial;quick" WORKING_DIRECTORY "/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/savescalars" _BACKTRACE_TRIPLES "/home/acer/risc-v-hpc/ports/elmer/cmake/Modules/test_macros.cmake;48;ADD_TEST;/home/acer/risc-v-hpc/ports/elmer/fem/tests/savescalars/CMakeLists.txt;8;ADD_ELMER_TEST;/home/acer/risc-v-hpc/ports/elmer/fem/tests/savescalars/CMakeLists.txt;0;")

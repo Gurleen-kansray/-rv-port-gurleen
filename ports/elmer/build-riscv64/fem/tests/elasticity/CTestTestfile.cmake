@@ -1,0 +1,8 @@
+# CMake generated Testfile for 
+# Source directory: /home/acer/risc-v-hpc/ports/elmer/fem/tests/elasticity
+# Build directory: /home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/elasticity
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(elasticity "/usr/bin/cmake" "-DCMAKE_MODULE_PATH=/home/acer/risc-v-hpc/ports/elmer/cmake/Modules" "/usr/share/cmake-3.28/Modules" "-DELMERGRID_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/elmergrid/src/ElmerGrid" "-DELMERSOLVER_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/src/ElmerSolver" "-DFINDNORM_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/findnorm" "-DMESH2D_BIN=/home/acer/risc-v-hpc/ports/elmer/build-riscv64/meshgen2d/src/Mesh2D" "-DTEST_SOURCE=/home/acer/risc-v-hpc/ports/elmer/fem/tests/elasticity" "-DPROJECT_SOURCE_DIR=/home/acer/risc-v-hpc/ports/elmer/fem/tests" "-DBINARY_DIR=/home/acer/risc-v-hpc/ports/elmer/build-riscv64" "-DCMAKE_Fortran_COMPILER=/usr/bin/riscv64-linux-gnu-gfortran" "-DMPIEXEC=" "-DMPIEXEC_NUMPROC_FLAG=" "-DMPIEXEC_PREFLAGS=" "-DMPIEXEC_POSTFLAGS=" "-DWITH_MPI=OFF" "-DMPIEXEC_NTASKS=1" "-P" "/home/acer/risc-v-hpc/ports/elmer/fem/tests/elasticity/runtest.cmake")
+set_tests_properties(elasticity PROPERTIES  LABELS "serial;quick;elasticsolve" WORKING_DIRECTORY "/home/acer/risc-v-hpc/ports/elmer/build-riscv64/fem/tests/elasticity" _BACKTRACE_TRIPLES "/home/acer/risc-v-hpc/ports/elmer/cmake/Modules/test_macros.cmake;48;ADD_TEST;/home/acer/risc-v-hpc/ports/elmer/fem/tests/elasticity/CMakeLists.txt;8;ADD_ELMER_TEST;/home/acer/risc-v-hpc/ports/elmer/fem/tests/elasticity/CMakeLists.txt;0;")

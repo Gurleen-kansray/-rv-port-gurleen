@@ -1,0 +1,19 @@
+#!/bin/sh -f
+
+if test "$ELMER_LIB" = ""; then
+  if  test "$ELMER_HOME" = ""; then
+     LIBDIR=/opt/elmer-riscv64/lib
+  else
+     LIBDIR=$ELMER_HOME/lib
+  fi
+else
+  LIBDIR=$ELMER_LIB
+fi
+
+LD=/usr/bin/riscv64-linux-gnu-gfortran
+cmd="$LD -march=rv64g -mabi=lp64d -fallow-argument-mismatch -Wno-do-subscript -fallow-argument-mismatch -fPIC -shared $* -L/opt/elmer-riscv64/lib/elmersolver -L$LIBDIR -lelmersolver"
+printf "%s " $cmd
+printf "\n"
+$LD -march=rv64g -mabi=lp64d -fallow-argument-mismatch -Wno-do-subscript -fallow-argument-mismatch -fPIC -shared $* -L/opt/elmer-riscv64/lib/elmersolver -L$LIBDIR -lelmersolver
+#      $* -L$LIBDIR -lelmersolver
+#      $*

@@ -3,7 +3,7 @@
 Cross-compilation pipeline for riscv64 HPC codes.
 **LFX Mentorship 2026 — Broadening the RISC-V High Precision Code Base and Reach**
 
-**Gurleen Kaur Kansray** | gurleen72542@gmail.com | [GitHub](https://github.com/Gurleen-kansray/-rv-port-gurleen)
+**Gurleen Kaur Kansray** | gurleen72542@gmail.com | [GitHub](https://github.com/Gurleen-kansray/
 
 ---
 

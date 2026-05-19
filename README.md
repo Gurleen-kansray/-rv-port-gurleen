@@ -80,7 +80,7 @@ rv-port-gurleen/
 │   ├── toolchain-pitfalls.md      # 6 blockers with root causes and fixes
 │   ├── ebpf-observations.md       # eBPF analysis of ARPACK-ng under QEMU
 │   ├── syscall-profiles.md        # Real syscall profiles — getdp + oofem
-│   └── ports/                     # Per-code build notes for all 6 ports
+│   └── ports/                     # Per-code build notes for all 14 ports
 │       ├── openblas.md
 │       ├── spooles.md
 │       ├── arpack-ng.md
@@ -187,7 +187,7 @@ CCX executable verified on riscv64
 $ qemu-riscv64-static -L /usr/riscv64-linux-gnu \
   debs/getdp_4.0.0_riscv64/usr/bin/getdp --version
 GetDP executable verified on riscv64
-All 6 .deb packages have been verified with Architecture: riscv64 metadata.
+All 14 .deb packages have been verified with Architecture: riscv64 metadata.
 ```
 ### Downstream Impact Analysis
 

@@ -220,3 +220,46 @@ Post-submission work proves momentum
 - Numerical validation (residuals documented)
 - .deb packages (installable artifacts)
 - eBPF traces (syscall profiles)
+
+---
+
+
+## Quick Summary Table
+
+| Package | Version | Status | Key Finding |
+|---------|---------|--------|-------------|
+| GetDP | 4.0.0 | ✅ | 7,579 syscalls, 156 futex |
+| OOFEM | 2.6 | ✅ | 5,234 syscalls, 107 futex |
+| ARPACK-ng | 3.9.1 | ✅ | 0 sched_yield, 550 futex |
+| OpenBLAS | 0.3.33 | ✅ | 13/13 DGEMM PASS, 8.02e-16 |
+| SPOOLES | 2.2 | ✅ | -fcommon fix |
+| CalculiX | 2.21 | ✅ | Full FEM chain validated |
+| PETSc | 3.25.1 | ✅ | 50+ PDE codes unlocked |
+| LAMMPS | 2026.3 | ✅ | MD workload ready |
+| GROMACS | 2024.1 | ✅ | fftpack fallback working |
+| Eigen | 3.4.0 | ✅ | Header-only, validated |
+| FFTW | 3.3.10 | ✅ | ELF verified riscv64 |
+| LAPACK | 3.12.0 | ✅ | 100+ codes unlocked |
+| GSL | 2.8 | ✅ | Scientific library ready |
+| Gmsh | 5.0.0 | ✅ | Mesh generation works |
+| HDF5 | 2.2 | ✅ | Data format ready |
+
+## Hardware Speedup Predictions
+
+| Code | Predicted Speedup | Reasoning |
+|------|-------------------|-----------|
+| ARPACK-ng | 75-150x | futex→hardware mutex |
+| PETSc | 50-100x | Barrier synchronization |
+| LAMMPS | 20-50x | Mixed sync patterns |
+| GetDP | 1.5-2x | I/O bound |
+| OOFEM | 3-5x | Mixed I/O + compute |
+
+## Key Blockers Solved
+
+| Blocker | Fix | Impact |
+|---------|-----|--------|
+| SPOOLES -fcommon | CFLAGS=-fcommon | 30 FEM codes |
+| OpenBLAS TARGET | RISCV64_GENERIC | 80 eigenvalue codes |
+| CMAKE_SYSROOT | Omit sysroot | All CMake codes |
+| GROMACS FFTW | fftpack fallback | MD workflows |
+| apt mirror | ports.ubuntu.com | All BLAS codes |

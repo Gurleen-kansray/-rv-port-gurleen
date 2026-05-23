@@ -305,3 +305,12 @@ Post-submission work proves momentum
 | 19 | Mutex performance | 261.74 ns per lock/unlock | 10-100x faster |
 
 **Key insight:** QEMU adds significant overhead for atomics (2,496%), signals (2,536 ns), and mutexes (262 ns). Hardware will be 10-100x faster.
+
+## Hardware Access Plan (Phase 4)
+
+All 25 packages validated under QEMU. Phase 4 will validate on real silicon:
+- HiFive Unmatched Pro / VisionFive 2
+- Measure actual hardware speedup (predicted 10-50x)
+- Compare QEMU vs hardware results
+
+**Ready for hardware validation.**

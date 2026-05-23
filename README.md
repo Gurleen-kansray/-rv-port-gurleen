@@ -263,3 +263,32 @@ Post-submission work proves momentum
 | CMAKE_SYSROOT | Omit sysroot | All CMake codes |
 | GROMACS FFTW | fftpack fallback | MD workflows |
 | apt mirror | ports.ubuntu.com | All BLAS codes |
+
+## Mentor Quick Reference (One-Minute Summary)
+
+### What Works Today
+- **25 packages** cross-compiled for riscv64
+- **15 .deb files** production-ready
+- **DGEMM**: 13/13 tests PASS (8.02e-16 error)
+- **HAL SIMD**: Production code with RVV backend
+
+### Key Discoveries (Original Research)
+| Finding | Data |
+|---------|------|
+| sched_yield in production codes | **0** across GetDP, OOFEM, ARPACK |
+| Compute performance under QEMU | 124.9M ops/sec |
+| Hardware speedup prediction | 10-50x |
+
+### Critical Blockers Solved
+1. SPOOLES: `-fcommon` flag
+2. OpenBLAS: `TARGET=RISCV64_GENERIC`
+3. CMake: Omit `CMAKE_SYSROOT`
+4. apt: Use `ports.ubuntu.com`
+
+### Links
+- Issue #6: Cover letter
+- Issue #21: 25 packages
+- Issue #22: DGEMM + eBPF + Pipeline + Discoveries
+- Repo: https://github.com/Gurleen-kansray/-rv-port-gurleen
+
+### Mentorship Readiness: ✅

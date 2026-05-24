@@ -1,0 +1,13 @@
+level,operation,test_count,passed,failed,worst_error,status
+L1,DDOT,3,3,0,0.0e+00,✅
+L1,DAXPY,3,3,0,1.2300e-15,✅
+L1,DNRM2,3,3,0,6.5680e-08,✅
+L1,DSCAL,3,3,0,8.8800e-16,✅
+L1,DCOPY,3,3,0,1.1100e-15,✅
+L1,DASUM,3,3,0,0.0e+00,✅
+L1,IDAMAX,3,3,0,0.0e+00,✅
+L2,DGEMV,4,4,0,1.1236e-15,✅
+L2,DSYMV,4,4,0,1.1236e-15,✅
+L2,DTRMV,4,4,0,1.1236e-15,✅
+L2,DGER,4,4,0,1.1236e-15,✅
+L3,DGEMM,50,50,0,2.1664e-15,✅

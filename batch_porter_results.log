@@ -1,0 +1,19 @@
+🚀 Batch Porter: Porting 5 codes in parallel
+Results: batch_results_20260524_163331
+
+tee: 'batch_results_20260524_163331///github.com/OpenFOAM/OpenFOAM-dev:OpenFOAM.txt': No such file or directory
+tee: 'batch_results_20260524_163331///github.com/oofem/oofem:OOFEM.txt': No such file or directory
+tee: 'batch_results_20260524_163331///github.com/namsrai/Kratos:Kratos.txt': No such file or directory
+[16:33:31] Starting //github.com/namsrai/Kratos:Kratos...
+tee: 'batch_results_20260524_163331///github.com/dealii/dealii:deal.II.txt': No such file or directory
+tee: 'batch_results_20260524_163331///github.com/fenics/dolfin:FEniCS-DOLFIN.txt': No such file or directory
+[16:33:31] Starting //github.com/fenics/dolfin:FEniCS-DOLFIN...
+[16:33:31] Starting //github.com/oofem/oofem:OOFEM...
+[16:33:31] Starting //github.com/OpenFOAM/OpenFOAM-dev:OpenFOAM...
+[16:33:31] Starting //github.com/dealii/dealii:deal.II...
+
+📊 Summary:
+
+grep: batch_results_20260524_163331/*.txt: No such file or directory
+grep: batch_results_20260524_163331/*.txt: No such file or directory
+⏭️  *

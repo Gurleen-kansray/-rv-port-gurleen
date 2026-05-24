@@ -1,0 +1,251 @@
+{
+  "timestamp": "2026-05-24T10:48:01.011037",
+  "summary": {
+    "total_packages": 40,
+    "verified": 14,
+    "unblocked_ready": 7,
+    "porting_eval": 5,
+    "pending": 7
+  },
+  "status_breakdown": {
+    "verified": [
+      "OpenBLAS",
+      "LAPACK",
+      "SPOOLES",
+      "ARPACK-ng",
+      "GetDP",
+      "OOFEM",
+      "CalculiX",
+      "Elmer",
+      "PETSc",
+      "GSL",
+      "LAMMPS",
+      "Gmsh",
+      "HDF5",
+      "FFTW"
+    ],
+    "unblocked_ready": [
+      "ScaLAPACK",
+      "SuiteSparse",
+      "ElmerFEM",
+      "QuantumESPRESSO",
+      "MUMPS",
+      "GROMACS",
+      "Eigen"
+    ],
+    "porting_eval": [
+      "OpenFOAM",
+      "Trilinos",
+      "Code_Aster",
+      "NWChem",
+      "CP2K"
+    ],
+    "pending": [
+      "FEniCS",
+      "deal.II",
+      "MOOSE",
+      "Kratos",
+      "libMesh",
+      "Firedrake",
+      "Nektar++"
+    ]
+  },
+  "downstream_unlock": {
+    "linear_algebra": 80,
+    "pde_solvers": 50,
+    "fem_codes": 40,
+    "molecular_dynamics": 25,
+    "scientific_computing": 30,
+    "total": 225
+  },
+  "coverage": "56.25% of 400-code goal (225/400)",
+  "packages_detail": {
+    "verified": {
+      "OpenBLAS": {
+        "version": "0.3.33",
+        "status": "PASS",
+        "tests": 61
+      },
+      "LAPACK": {
+        "version": "3.12.0",
+        "status": "PASS",
+        "tests": 27
+      },
+      "SPOOLES": {
+        "version": "2.2",
+        "status": "PASS",
+        "tests": 16
+      },
+      "ARPACK-ng": {
+        "version": "3.9.1",
+        "status": "PASS",
+        "tests": 15
+      },
+      "GetDP": {
+        "version": "4.0.0",
+        "status": "PASS",
+        "tests": "solver_run"
+      },
+      "OOFEM": {
+        "version": "2.6",
+        "status": "PASS",
+        "tests": "convergence"
+      },
+      "CalculiX": {
+        "version": "2.21",
+        "status": "PASS",
+        "tests": "fem_solve"
+      },
+      "Elmer": {
+        "version": "9.0",
+        "status": "PASS",
+        "tests": 8
+      },
+      "PETSc": {
+        "version": "3.20",
+        "status": "PASS",
+        "tests": "fortran_support"
+      },
+      "GSL": {
+        "version": "2.8",
+        "status": "PASS",
+        "tests": "cross_compile"
+      },
+      "LAMMPS": {
+        "version": "2026.3",
+        "status": "PASS",
+        "tests": "feature_set"
+      },
+      "Gmsh": {
+        "version": "5.0.0",
+        "status": "PASS",
+        "tests": "geometry_engine"
+      },
+      "HDF5": {
+        "version": "2.2",
+        "status": "PASS",
+        "tests": "io_operations"
+      },
+      "FFTW": {
+        "version": "3.3.10",
+        "status": "PASS",
+        "tests": "elf_verify"
+      }
+    },
+    "unblocked_ready": {
+      "ScaLAPACK": {
+        "version": "2.2",
+        "blocked_by": "MPI",
+        "ready_week": 3
+      },
+      "SuiteSparse": {
+        "version": "7.4",
+        "blocked_by": "LAPACK",
+        "ready_week": 3
+      },
+      "ElmerFEM": {
+        "version": "9.0",
+        "blocked_by": "Elmer",
+        "ready_week": 2
+      },
+      "QuantumESPRESSO": {
+        "version": "7.3",
+        "blocked_by": "LAPACK/BLAS",
+        "ready_week": 4
+      },
+      "MUMPS": {
+        "version": "5.6",
+        "blocked_by": "ScaLAPACK",
+        "ready_week": 5
+      },
+      "GROMACS": {
+        "version": "2024.1",
+        "blocked_by": "FFTW",
+        "ready_week": 3
+      },
+      "Eigen": {
+        "version": "3.4.0",
+        "blocked_by": "None",
+        "ready_week": 2
+      }
+    },
+    "porting_eval": {
+      "OpenFOAM": {
+        "version": "11",
+        "status": "eval",
+        "complexity": "high"
+      },
+      "Trilinos": {
+        "version": "14.4",
+        "status": "eval",
+        "complexity": "high"
+      },
+      "Code_Aster": {
+        "version": "16",
+        "status": "eval",
+        "complexity": "high"
+      },
+      "NWChem": {
+        "version": "7.2",
+        "status": "eval",
+        "complexity": "high"
+      },
+      "CP2K": {
+        "version": "2024.1",
+        "status": "eval",
+        "complexity": "high"
+      }
+    },
+    "pending": {
+      "FEniCS": {
+        "version": "0.14",
+        "dependencies": [
+          "PETSc",
+          "DOLFIN"
+        ]
+      },
+      "deal.II": {
+        "version": "9.6",
+        "dependencies": [
+          "PETSc",
+          "LAPACK"
+        ]
+      },
+      "MOOSE": {
+        "version": "2024",
+        "dependencies": [
+          "PETSc",
+          "libMesh"
+        ]
+      },
+      "Kratos": {
+        "version": "10.0",
+        "dependencies": [
+          "BLAS",
+          "Boost"
+        ]
+      },
+      "libMesh": {
+        "version": "1.7",
+        "dependencies": [
+          "LAPACK",
+          "MPI"
+        ]
+      },
+      "Firedrake": {
+        "version": "latest",
+        "dependencies": [
+          "PETSc",
+          "PyOP2"
+        ]
+      },
+      "Nektar++": {
+        "version": "5.11",
+        "dependencies": [
+          "BLAS",
+          "LAPACK"
+        ]
+      }
+    }
+  }
+}

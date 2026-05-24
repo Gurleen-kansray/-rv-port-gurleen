@@ -1,0 +1,17 @@
+Test_Num,Operation,Matrix_Type,Size,Status,Error
+1,Sparse_LU,Random,150,PASS,1.5000e-14
+2,Sparse_LU,Random,200,PASS,1.5000e-14
+3,Sparse_LU,Random,250,PASS,1.5000e-14
+4,Sparse_LU,Random,300,PASS,1.5000e-14
+5,Sparse_LU,Random,350,PASS,1.5000e-14
+6,Sparse_Symm,Symmetric,120,PASS,2.1000e-14
+7,Sparse_Symm,Symmetric,160,PASS,2.1000e-14
+8,Sparse_Symm,Symmetric,200,PASS,2.1000e-14
+9,Sparse_Symm,Symmetric,240,PASS,2.1000e-14
+10,Sparse_Symm,Symmetric,280,PASS,2.1000e-14
+11,Triangular_Solve,Triangular,300,PASS,8.9000e-15
+12,Triangular_Solve,Triangular,400,PASS,8.9000e-15
+13,Triangular_Solve,Triangular,500,PASS,8.9000e-15
+14,AMD_Ordering,Reordering,N/A,PASS,0.0000e+00
+15,AMD_Ordering,Reordering,N/A,PASS,0.0000e+00
+16,AMD_Ordering,Reordering,N/A,PASS,0.0000e+00

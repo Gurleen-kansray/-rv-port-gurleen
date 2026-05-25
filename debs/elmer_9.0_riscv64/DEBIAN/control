@@ -1,0 +1,5 @@
+Package: elmer
+Version: 9.0
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: Elmer FEM - riscv64 cross-compiled port

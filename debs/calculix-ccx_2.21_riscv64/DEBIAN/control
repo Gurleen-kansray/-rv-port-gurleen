@@ -1,0 +1,6 @@
+Package: calculix-ccx
+Version: 2.21
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: calculix-ccx - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

@@ -1,0 +1,6 @@
+Package: gsl
+Version: 2.8
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: gsl - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

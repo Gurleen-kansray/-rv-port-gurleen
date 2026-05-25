@@ -1,0 +1,6 @@
+Package: getdp
+Version: 4.0.0
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: getdp - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

@@ -1,0 +1,6 @@
+Package: lammps
+Version: 2026.3
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: lammps - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

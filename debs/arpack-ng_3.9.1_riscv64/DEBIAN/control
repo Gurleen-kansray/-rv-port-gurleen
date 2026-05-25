@@ -1,0 +1,6 @@
+Package: arpack-ng
+Version: 3.9.1
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: arpack-ng - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

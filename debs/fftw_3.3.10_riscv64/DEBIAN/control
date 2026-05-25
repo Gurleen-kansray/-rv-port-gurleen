@@ -1,0 +1,6 @@
+Package: fftw
+Version: 3.3.10
+Architecture: riscv64
+Maintainer: Gurleen Kansray <gurleen72542@gmail.com>
+Description: fftw - riscv64 cross-compiled port
+ Built and validated under qemu-riscv64-static.

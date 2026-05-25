@@ -474,3 +474,16 @@ All 25 packages validated under QEMU. Phase 4 will validate on real silicon:
 **This is the most comprehensive riscv64 HPC performance analysis ever performed.**
 
 **Ready for Phase 4 hardware validation.**
+
+### Utility Packages (7)
+| Package | Version | Purpose |
+|---------|---------|---------|
+| sqlite3 | 3.45.2 | Lightweight database |
+| gzip | 1.13 | Compression |
+| grep | 3.11 | Text search |
+| John the Ripper | 1.9.0 | Password auditing |
+| STREAM | 5.10 | Memory benchmark |
+| zstd | 1.5.5 | Fast compression |
+| xz-utils | 5.4.4 | High compression |
+
+**Total .deb packages: 22**

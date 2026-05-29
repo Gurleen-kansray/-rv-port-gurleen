@@ -1,0 +1,32 @@
+____________________________________________________
+  ____  ____  __________  ___ 
+ / __ \/ __ \/ __/ __/  |/  /___  _______
+/ /_/ / /_/ / _// _// /|_/ // _ \/ __/ _ \
+\____/\____/_/ /___/_/  /_(_)___/_/  \_, / 
+Copyright (C) 1994-2026 Borek Patzak /__/
+____________________________________________________
+
+Options:
+
+  -v  prints oofem version
+  -f  (string) input file name
+  -r  (int) restarts analysis from given step
+  -ar (int) restarts adaptive analysis from given step
+  -l  (int) sets treshold for log messages (Errors=0, Warnings=1,
+            Relevant=2, Info=3, Debug=4)
+  -rn turns on renumbering
+  -qo (string) redirects the standard output stream to given file
+  -qe (string) redirects the standard error stream to given file
+  -c  creates context file for each solution step
+  -p  runs in parallel mode (MPI)
+  -t  (int) sets number of threads for OpenMP parallelization
+  -m  shows solution status monitor output,
+      redirecting standard output to files,
+      oofem.stdout, oofem.stderr by default, use -qo -qe to override
+  -Werror  promote warnings to errors
+
+
+Copyright (C) 1994-2026 Borek Patzak
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+

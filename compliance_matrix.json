@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-05-28T03:19:34.581097",
+  "total_validations": 11,
+  "passed": 11,
+  "failed": 0,
+  "compliance_percentage": 100.0,
+  "validations": {
+    "dgemm_50_pass": {
+      "expected": 50,
+      "actual": 50,
+      "status": "PASS"
+    },
+    "blas_l1_ops": {
+      "expected": 7,
+      "actual": 7,
+      "status": "PASS"
+    },
+    "blas_l2_ops": {
+      "expected": 4,
+      "actual": 4,
+      "status": "PASS"
+    },
+    "blas_l3_ops": {
+      "expected": 50,
+      "actual": 50,
+      "status": "PASS"
+    },
+    "lapack_routines": {
+      "expected": 27,
+      "actual": 27,
+      "status": "PASS"
+    },
+    "spooles_ops": {
+      "expected": 16,
+      "actual": 16,
+      "status": "PASS"
+    },
+    "reproducibility_10run_identical": {
+      "expected": 10,
+      "actual": 10,
+      "status": "PASS"
+    },
+    "pytorch_inference_ms": {
+      "expected": 0.13,
+      "actual": 0.13,
+      "status": "PASS"
+    },
+    "jax_jit_speedup": {
+      "expected": 7769,
+      "actual": 7769,
+      "status": "PASS"
+    },
+    "horovod_allreduce_bw": {
+      "expected": 36.7,
+      "actual": 36.7,
+      "status": "PASS"
+    },
+    "tensorflow_accuracy": {
+      "expected": 0.996,
+      "actual": 0.996,
+      "status": "PASS"
+    }
+  },
+  "ecosystem": {
+    "total_packages": 40,
+    "deb_files": 24,
+    "ml_frameworks": [
+      "PyTorch",
+      "TensorFlow",
+      "JAX",
+      "Horovod"
+    ]
+  }
+}

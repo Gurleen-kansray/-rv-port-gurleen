@@ -1,0 +1,22 @@
+Reproducibility Proof: 10-Run Bit-Identical Hashes
+===================================================
+
+Same DGEMM binary executed 10 times independently.
+All error values hashed with MD5.
+
+Run 1:  d7352f16ffa5edde9aefcc2b689be667
+Run 2:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 3:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 4:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 5:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 6:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 7:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 8:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 9:  d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+Run 10: d7352f16ffa5edde9aefcc2b689be667  ✅ IDENTICAL
+
+Result: 10/10 bit-identical hashes ✅
+
+Conclusion: RISC-V scalar operations are deterministic
+Critical for HPC: Reproducible numerical results across multiple runs
+validates stability for scientific computing.

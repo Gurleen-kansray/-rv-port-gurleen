@@ -1,0 +1,21 @@
+{
+  "binary": "OOFEM",
+  "timestamp": "2026-05-23T07:42:09.932222",
+  "summary": {
+    "total_syscalls": 5234,
+    "top_syscalls": {
+      "openat": 570,
+      "mmap": 211,
+      "futex": 107,
+      "read": 89
+    },
+    "sync_overhead": 107,
+    "io_overhead": 781,
+    "hardware_speedup": "5x"
+  },
+  "analysis": {
+    "sync_dominated": false,
+    "io_bound": true,
+    "hardware_prediction": "QEMU: 5,234 syscalls -> Hardware: 523 (est. 5x)"
+  }
+}

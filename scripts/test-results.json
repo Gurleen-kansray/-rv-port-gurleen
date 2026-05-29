@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-05-16T14:36:54.909120",
+  "total": 7,
+  "passed": 6,
+  "failed": 1,
+  "total_size_mb": 17.04056739807129,
+  "results": [
+    {
+      "name": "openblas",
+      "status": "PASS",
+      "file": "libopenblas_0.3.33_riscv64.deb",
+      "size_mb": 4.575141906738281
+    },
+    {
+      "name": "spooles",
+      "status": "PASS",
+      "file": "spooles_2.2_riscv64.deb",
+      "size_mb": 0.7893562316894531
+    },
+    {
+      "name": "arpack",
+      "status": "PASS",
+      "file": "arpack-ng_3.9.1_riscv64.deb",
+      "size_mb": 0.2664203643798828
+    },
+    {
+      "name": "getdp",
+      "status": "PASS",
+      "file": "getdp_4.0.0_riscv64.deb",
+      "size_mb": 4.640356063842773
+    },
+    {
+      "name": "oofem",
+      "status": "PASS",
+      "file": "oofem_2.6_riscv64.deb",
+      "size_mb": 4.284942626953125
+    },
+    {
+      "name": "calculix",
+      "status": "PASS",
+      "file": "calculix-ccx_2.21_riscv64.deb",
+      "size_mb": 2.4843502044677734
+    },
+    {
+      "name": "elmer",
+      "status": "NOT_FOUND",
+      "file": "elmer_9.0_riscv64.deb"
+    }
+  ]
+}

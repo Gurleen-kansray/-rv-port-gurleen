@@ -1,0 +1,4 @@
+riscv64-linux-gnu-gcc: error: ‘-march=native’: ISA string must begin with rv32 or rv64
+make: *** [Makefile.prebuild:100: getarch] Error 1
+Makefile.system:1644: Makefile.: No such file or directory
+make: *** No rule to make target 'Makefile.'.  Stop.

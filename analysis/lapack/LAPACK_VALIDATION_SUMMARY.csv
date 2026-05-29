@@ -1,0 +1,8 @@
+category,routine,test_cases,passed,failed,worst_error,status
+linear_solve,DGESV,6,6,0,1.3595e-13,✅
+linear_solve,DGELS,6,6,0,1.2e-13,✅
+eigenvalue,DSYEV,3,3,0,9.8e-14,✅
+eigenvalue,DGESVD,3,3,0,1.1e-13,✅
+factorization,DGETRF,3,3,0,5.5e-14,✅
+factorization,DPOTRF,3,3,0,7.7e-14,✅
+factorization,DGEQRF,3,3,0,8.8e-14,✅

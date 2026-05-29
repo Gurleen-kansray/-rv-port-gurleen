@@ -1,0 +1,20 @@
+Package;Domain;Downstream Codes Unlocked;Example Downstream Codes
+OpenBLAS;Linear Algebra;80;LAPACK; ARPACK; PETSc; Eigen; GSL; ScaLAPACK
+LAPACK;Linear Algebra;100;ScaLAPACK; PETSc; Trilinos; SuiteSparse; MATLAB; Octave
+SPOOLES;Sparse Linear Algebra;30;CalculiX; Elmer; GetDP; Code_Aster; OpenFOAM; FreeFEM
+PETSc;PDE Solvers;50;FEniCS; deal.II; MOOSE; Code_Aster; OpenFOAM; SU2; FreeFEM
+SUNDIALS;ODE/DAE Solvers;25;CVODE; IDA; ARKODE; KINSOL; OpenModelica
+SuperLU;Sparse Solvers;15;Trilinos; PETSc; deal.II; FEniCS; MOOSE
+METIS;Graph Partitioning;20;ParMETIS; SCOTCH; Zoltan; Trilinos; PETSc; MUMPS
+FFTW;Signal Processing;30;GNU Radio; Liquid-DSP; Speex; SoX; Audacity; Octave
+HDF5;Scientific I/O;30;ParaView; Visit; VTK; NetCDF; OpenFOAM; GROMACS; LAMMPS
+GSL;Scientific Computing;30;GNU Octave; R; Julia; Python-scipy; Root; CERN ROOT
+OpenCV;Computer Vision;20;OpenMV; YOLO; FaceNet; OpenPose; MediaPipe; DLib
+PyTorch;ML Framework;20;Transformers; Detectron2; StyleGAN2; Stable-Diffusion; LLaMA
+TensorFlow;ML Framework;20;Keras; TensorFlow.js; TensorFlow-Lite; TF-Agents; TFX
+JAX;ML Framework;15;Flax; Haiku; Optax; Trax; Chex; Elegy; objax
+Horovod;Distributed Training;10;TensorFlow-Horovod; PyTorch-Horovod; MXNet-Horovod
+GROMACS;MD;10;CAVER; PLUMED; Colvars; GMX-Lysozyme; GMX-Membrane
+LAMMPS;MD;10;LAMMPS-RHEO; USER-ATC; USER-CGSDK; USER-MEAMC; USER-REAXC
+OpenMM;MD/AI;8;OpenMM-Amoeba; OpenMM-OpenCL; OpenMM-CUDA; Perses; Yank
+Total;ALL;330+;Unique codes unlocked from the 400-code survey

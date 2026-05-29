@@ -1,0 +1,9 @@
+Package: spooles
+Version: 2.2
+Architecture: riscv64
+Maintainer: Gurleen Kansray <your@email.com>
+Description: SPOOLES sparse linear algebra library — riscv64 cross-compiled
+ SPOOLES is a library for solving sparse real and complex linear systems
+ of equations. Cross-compiled for riscv64 with -fcommon fix for GCC 10+.
+ Part of LFX RISC-V HPC porting effort.
+Depends: libc6

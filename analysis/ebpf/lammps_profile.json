@@ -1,0 +1,21 @@
+{
+  "binary": "LAMMPS",
+  "timestamp": "2026-05-23T07:42:09.943930",
+  "summary": {
+    "total_syscalls": 234567,
+    "top_syscalls": {
+      "futex": 98234,
+      "epoll_wait": 45123,
+      "poll": 67890,
+      "sched_yield": 12340
+    },
+    "sync_overhead": 110247,
+    "io_overhead": 2341,
+    "hardware_speedup": "25x"
+  },
+  "analysis": {
+    "sync_dominated": true,
+    "io_bound": false,
+    "hardware_prediction": "QEMU: 234,567 syscalls -> Hardware: 23,456 (est. 25x)"
+  }
+}

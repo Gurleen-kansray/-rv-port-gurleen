@@ -1,0 +1,9 @@
+Package: getdp
+Version: 4.0.0
+Architecture: riscv64
+Maintainer: Gurleen Kansray <your@email.com>
+Description: GetDP finite element solver — riscv64 cross-compiled
+ GetDP is a free finite element solver using mixed elements to discretize
+ de Rham-type complexes in one, two and three dimensions.
+ Cross-compiled for riscv64 as part of LFX RISC-V HPC porting effort.
+Depends: libc6

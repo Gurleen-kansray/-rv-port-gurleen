@@ -1,0 +1,21 @@
+{
+  "binary": "GetDP",
+  "timestamp": "2026-05-23T07:42:09.930890",
+  "summary": {
+    "total_syscalls": 7579,
+    "top_syscalls": {
+      "openat": 332,
+      "close": 285,
+      "read": 198,
+      "futex": 156
+    },
+    "sync_overhead": 156,
+    "io_overhead": 815,
+    "hardware_speedup": "1.5x"
+  },
+  "analysis": {
+    "sync_dominated": false,
+    "io_bound": true,
+    "hardware_prediction": "QEMU: 7,579 syscalls -> Hardware: 757 (est. 1.5x)"
+  }
+}

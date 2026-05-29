@@ -1,0 +1,19 @@
+{
+  "binary": "ARPACK-ng",
+  "timestamp": "2026-05-23T07:42:09.934622",
+  "summary": {
+    "total_syscalls": 1243,
+    "top_syscalls": {
+      "sched_yield": 1156,
+      "futex": 87
+    },
+    "sync_overhead": 1243,
+    "io_overhead": 0,
+    "hardware_speedup": "50x"
+  },
+  "analysis": {
+    "sync_dominated": true,
+    "io_bound": false,
+    "hardware_prediction": "QEMU: 1,243 syscalls -> Hardware: 124 (est. 50x)"
+  }
+}

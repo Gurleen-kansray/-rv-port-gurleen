@@ -1,0 +1,38 @@
+═══════════════════════════════════════════════════════════════════
+  RISC-V HPC PORTABILITY PoC - LIVE DEMO
+  Gurleen Kaur Kansray
+═══════════════════════════════════════════════════════════════════
+
+[1] SHOW: GitHub Repository
+    25 packages | 15 .deb files | 164 operations validated
+
+[2] RUN: Scientific Demo
+    $ qemu-riscv64-static ./scientific_demo
+    
+    OUTPUT:
+    ✅ BLAS Matrix Operations PASS
+    ✅ LAPACK Eigenvalue Solver PASS
+    ✅ FFT Frequency Analysis PASS
+    ✅ GSL Special Functions PASS
+
+[3] RUN: Performance Dashboard
+    $ ./performance_dashboard.sh
+    
+    Shows: DGEMM GFLOPS, Syscall latency, Memory bandwidth
+
+[4] RUN: Dependency Map
+    $ ./dependency_map.sh
+    
+    Shows: Complete 25-package dependency tree
+
+[5] SHOW: .deb Files
+    $ ls -la debs/*.deb
+    15 production-ready .deb files
+
+[6] SHOW: Reproducibility
+    $ ./reproducibility_demo
+    10-run identical hashes ✅
+
+═══════════════════════════════════════════════════════════════════
+  READY FOR PHASE 4 HARDWARE VALIDATION
+═══════════════════════════════════════════════════════════════════

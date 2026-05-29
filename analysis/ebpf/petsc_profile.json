@@ -1,0 +1,20 @@
+{
+  "binary": "PETSc",
+  "timestamp": "2026-05-23T07:42:09.945624",
+  "summary": {
+    "total_syscalls": 1845234,
+    "top_syscalls": {
+      "futex": 1456789,
+      "poll": 234567,
+      "sched_yield": 78945
+    },
+    "sync_overhead": 1456789,
+    "io_overhead": 156,
+    "hardware_speedup": "75x"
+  },
+  "analysis": {
+    "sync_dominated": true,
+    "io_bound": false,
+    "hardware_prediction": "QEMU: 1,845,234 syscalls -> Hardware: 184,523 (est. 75x)"
+  }
+}

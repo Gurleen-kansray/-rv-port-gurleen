@@ -1,0 +1,30 @@
+QEMU System Mode Validation Protocol
+====================================
+
+Critical Path: Differentiate QEMU RVV bug vs RVV kernel bug
+
+Phase 1: QEMU System Mode Setup (Week 2-3)
+- Build riscv64 rootfs (Fedora or Ubuntu riscv64)
+- Boot QEMU with real kernel (5.10+)
+- SSH access for test execution
+- Real syscall behavior (not multiplexed like user-mode)
+
+Phase 2: RVV Correctness Test (Week 3)
+- Run test_rvv_dgemm_extended on system-mode QEMU
+- If 4/4 PASS: QEMU user-mode RVV emulation is broken
+- If 0/4 FAIL: RVV kernel has intrinsic bugs
+- Decision: Proceed with hardware or fix kernel
+
+Phase 3: Syscall Profile Validation (Week 3)
+- Profile GetDP + OOFEM under strace
+- Count real futex calls (vs user-mode multiplexing)
+- Measure actual memory bandwidth
+- Validate 1.5x-75x speedup predictions
+
+Phase 4: Performance Baseline (Week 4)
+- DGEMM GFLOPS measurement
+- Cache behavior analysis
+- Branch prediction impact
+- Compare against user-mode predictions
+
+Output: Clear diagnostic of which layer has bugs

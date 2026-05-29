@@ -1,0 +1,31 @@
+name: Cross-compile RISC-V riscv64
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cross-compilation toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo dpkg --add-architecture riscv64
+          sudo apt-get install -qq riscv64-linux-gnu-gcc riscv64-linux-gnu-gfortran cmake
+
+      - name: Setup riscv64 ports mirror
+        run: |
+          echo "deb [arch=riscv64] http://ports.ubuntu.com/ubuntu-ports noble main restricted universe multiverse" \
+            | sudo tee /etc/apt/sources.list.d/ubuntu-ports-riscv64.list
+          sudo apt-get update -qq
+
+      - name: Build SPOOLES riscv64
+        run: |
+          mkdir -p /tmp/build-spooles && cd /tmp/build-spooles
+          wget -q http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
+          tar xf spooles.2.2.tgz && cd spooles.2.2
+          sed -i 's/^CC =.*/CC = riscv64-linux-gnu-gcc/' Make.inc
+          sed -i 's/^CFLAGS =.*/CFLAGS = -O2 -fcommon/' Make.inc
+make lib
+      # Optional: Add steps here to run tests or upload artifacts

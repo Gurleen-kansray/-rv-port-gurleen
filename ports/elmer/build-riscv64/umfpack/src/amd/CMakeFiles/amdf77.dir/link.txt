@@ -1,0 +1,2 @@
+/usr/bin/riscv64-linux-gnu-ar qc libamdf77.a CMakeFiles/amdf77.dir/amd.f.o CMakeFiles/amdf77.dir/amdbar.f.o
+/usr/bin/riscv64-linux-gnu-ranlib libamdf77.a

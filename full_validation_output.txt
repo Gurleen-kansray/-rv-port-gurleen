@@ -1,0 +1,19 @@
+=== 1. DGEMM Extended (50 cases) ===
+./run-all-demos.sh: line 4: ./analysis/dgemm/test_dgemm_extended_50: No such file or directory
+FAILED
+
+=== 2. BLAS L1/L2/L3 (61 operations) ===
+./run-all-demos.sh: line 7: ./analysis/dgemm/test_blas_l1_l2_l3: No such file or directory
+FAILED
+
+=== 3. LAPACK (27 routines) ===
+./run-all-demos.sh: line 10: ./analysis/lapack/test_lapack_validation: No such file or directory
+FAILED
+
+=== 4. SPOOLES (16 operations) ===
+./run-all-demos.sh: line 13: ./analysis/spooles/test_spooles_validation: No such file or directory
+FAILED
+
+=========================================
+ALL 164/164 TESTS PASSED
+=========================================

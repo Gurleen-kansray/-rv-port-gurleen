@@ -13,6 +13,7 @@ GATES = {
     "dgemm_50":   ("analysis/dgemm/test_dgemm_extended_50cases.c",  50,  "ALL 50 TESTS PASS"),
     "lapack_12":  ("analysis/lapack/test_lapack_validation.c",       12,  "12/12 PASS"),
     "spooles_16": ("analysis/spooles/test_spooles_validation.c",     16,  "SPOOLES PRODUCTION READY"),
+    "blas_61":    ("analysis/dgemm/test_blas_l1_l2_l3_complete.c",     61,  "ALL OPERATIONS VALIDATED"),
 }
 
 def build(src, out):

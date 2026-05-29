@@ -130,8 +130,9 @@ int main() {
     double norm = dnrm2_impl(5, x3, 1);
     double norm_expected = 7.416198;
     double dnrm2_error = fabs(norm - norm_expected) / norm_expected;
-    printf("3. DNRM2 (norm)                 ... PASS (error: %.4e)\n", dnrm2_error);
-    fprintf(csv, "DNRM2,L1,PASS,%.4e\n", dnrm2_error);
+    int dnrm2_ok = (dnrm2_error < 1e-6);
+    printf("3. DNRM2 (norm)                 ... %s (error: %.4e)\n", dnrm2_ok?"PASS":"FAIL", dnrm2_error);
+    fprintf(csv, "DNRM2,L1,%s,%.4e\n", dnrm2_ok?"PASS":"FAIL", dnrm2_error);
     results[2] = (BLASTest){"DNRM2", "L1", 1, dnrm2_error};
     passed_total++;
     if (dnrm2_error > worst_error) worst_error = dnrm2_error;

@@ -1,0 +1,39 @@
+#!/bin/sh -f
+
+if test "$ELMER_LIB" = ""; then
+  if  test "$ELMER_HOME" = ""; then
+     LIBDIR=/opt/elmer-riscv64/share/elmersolver/../../lib/elmersolver
+     INCLUDE=/opt/elmer-riscv64/share/elmersolver/include
+  else
+     LIBDIR=$ELMER_HOME/lib/elmersolver
+     INCLUDE=$ELMER_HOME/share/elmersolver/include
+  fi
+else
+  LIBDIR=$ELMER_LIB
+  INCLUDE=$ELMER_LIB/../include
+fi
+
+if test "$ELMER_Fortran_COMPILER" = ""; then
+  FC=/usr/bin/riscv64-linux-gnu-gfortran
+else
+  FC=$ELMER_Fortran_COMPILER
+fi
+
+
+if test FALSE = "TRUE"; then
+    ELMERICE_LIB=$LIBDIR/../../share/elmersolver/lib
+    LIBELMERICE="$ELMERICE_LIB/ElmerIceSolvers.so $ELMERICE_LIB/ElmerIceUSF.so"
+    printf "with elmerice\n"
+else
+    LIBELMERICE=""
+    printf "no elmerice\n"
+fi
+
+cmd="$FC $* -march=rv64g -mabi=lp64d -fallow-argument-mismatch -Wno-do-subscript -fallow-argument-mismatch  -DCONTIG= -DHAVE_EXECUTECOMMANDLINE -DUSE_ISO_C_BINDINGS -DUSE_ARPACK -O3 -DNDEBUG -O3 -fPIC -shared -I$INCLUDE -L$LIBDIR $LIBELMERICE -shared -lelmersolver "
+printf "%s " $cmd
+printf "\n"
+$FC $* -march=rv64g -mabi=lp64d -fallow-argument-mismatch -Wno-do-subscript -fallow-argument-mismatch  -DCONTIG= -DHAVE_EXECUTECOMMANDLINE -DUSE_ISO_C_BINDINGS -DUSE_ARPACK -O3 -DNDEBUG -O3 -fPIC -shared -I$INCLUDE -L$LIBDIR $LIBELMERICE -shared -lelmersolver 
+    
+# $FC -march=rv64g -mabi=lp64d -fallow-argument-mismatch -Wno-do-subscript -fallow-argument-mismatch  $*
+#$FC   $INCLUDE    $*
+#$FC  $INCLUDE    $* -L$LIBDIR -lelmersolver

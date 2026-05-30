@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+echo "Elmer 9.0 installed for RISC-V64"
+exit 0

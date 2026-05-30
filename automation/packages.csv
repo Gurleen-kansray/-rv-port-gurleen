@@ -1,0 +1,13 @@
+name,git_url,branch
+openblas,https://github.com/OpenMathLib/OpenBLAS.git,develop
+lapack,https://github.com/Reference-LAPACK/lapack.git,master
+petsc,https://gitlab.com/petsc/petsc.git,main
+lammps,https://github.com/lammps/lammps.git,develop
+gsl,https://github.com/ampl/gsl.git,master
+fftw,https://github.com/FFTW/fftw3.git,master
+hdf5,https://github.com/HDFGroup/hdf5.git,develop
+arpack,https://github.com/opencollab/arpack-ng.git,master
+getdp,https://gitlab.onelab.info/getdp/getdp.git,master
+gmsh,https://gitlab.onelab.info/gmsh/gmsh.git,master
+eigen,https://gitlab.com/libeigen/eigen.git,master
+gromacs,https://gitlab.com/gromacs/gromacs.git,main

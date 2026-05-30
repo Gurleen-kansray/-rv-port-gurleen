@@ -1,0 +1,15 @@
+🚀 Batch Porter: Porting 4 codes in parallel
+Results: batch_results_20260524_163417
+
+tee: 'batch_results_20260524_163417///github.com/dealii/dealii:deal.II.txt': No such file or directory
+tee: 'batch_results_20260524_163417///github.com/OpenFOAM/OpenFOAM-dev:OpenFOAM.txt': No such file or directory
+[16:34:17] Starting //github.com/OpenFOAM/OpenFOAM-dev:OpenFOAM...
+[16:34:17] Starting //github.com/dealii/dealii:deal.II...
+tee: 'batch_results_20260524_163417///github.com/fenics/dolfin:FEniCS.txt': No such file or directory
+[16:34:17] Starting //github.com/fenics/dolfin:FEniCS...
+tee: 'batch_results_20260524_163417///github.com/oofem/oofem:OOFEM.txt': No such file or directory
+[16:34:17] Starting //github.com/oofem/oofem:OOFEM...
+
+📊 Results Summary:
+===================
+⚠️  * - Build incomplete (expected for first attempt)

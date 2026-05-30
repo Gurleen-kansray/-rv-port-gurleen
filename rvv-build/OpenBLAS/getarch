@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "RISCV64_GENERIC"
+exit 0

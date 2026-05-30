@@ -1,0 +1,15 @@
+Package: elmer
+Version: 9.0-riscv64
+Architecture: riscv64
+Maintainer: Gurleen Kaur Kansray <gurleen72542@gmail.com>
+Installed-Size: 30720
+Depends: libc6, libgomp1
+Description: Elmer FEM multiphysics solver for RISC-V
+ Elmer is a finite element software for multiphysical simulations.
+ Cross-compiled for RISC-V64 architecture.
+ This package includes:
+ - ElmerSolver: Core FEM solver
+ - ElmerGrid: Mesh manipulation
+ - matc: Material calculator
+ - ViewFactors, GebhardtFactors: Radiation view factor tools
+Homepage: https://github.com/ElmerCSC/elmerfem

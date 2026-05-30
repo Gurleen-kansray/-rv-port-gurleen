@@ -1,0 +1,420 @@
+{
+  "generated": "2026-05-30T17:26:29.570035",
+  "summary": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0
+  },
+  "packages": [
+    {
+      "file": "arpack-ng-rvv_3.9.1_riscv64.deb",
+      "name": "arpack-ng-rvv",
+      "version": "3.9.1",
+      "size_kb": 246.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "c-blosc-riscv64_1.21.5_riscv64.deb",
+      "name": "c-blosc-riscv64",
+      "version": "1.21.5",
+      "size_kb": 968.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "calculix-ccx_2.21_riscv64.deb",
+      "name": "calculix-ccx",
+      "version": "2.21",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "clhep-riscv64_2.4.7.1_riscv64.deb",
+      "name": "clhep-riscv64",
+      "version": "2.4.7.1",
+      "size_kb": 25960.8,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "11/11 RISC-V ELF"
+    },
+    {
+      "file": "eigen_3.4.0_riscv64.deb",
+      "name": "eigen",
+      "version": "3.4.0",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "elmer_9.0_riscv64.deb",
+      "name": "elmer",
+      "version": "9.0",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "fftw3-rvv_3.3.10_riscv64.deb",
+      "name": "fftw3-rvv",
+      "version": "3.3.10",
+      "size_kb": 781.5,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "getdp_4.0.0_riscv64.deb",
+      "name": "getdp",
+      "version": "4.0.0",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "gmsh_5.0.0_riscv64.deb",
+      "name": "gmsh",
+      "version": "5.0.0",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "gromacs-rvv_2024.1_riscv64.deb",
+      "name": "gromacs-rvv",
+      "version": "2024.1",
+      "size_kb": 26285.7,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "4/4 RISC-V ELF"
+    },
+    {
+      "file": "gsl-riscv64_2.8_riscv64.deb",
+      "name": "gsl-riscv64",
+      "version": "2.8",
+      "size_kb": 2307.1,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "hdf5-rvv_2.2.0_riscv64.deb",
+      "name": "hdf5-rvv",
+      "version": "2.2.0",
+      "size_kb": 1969.0,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "6/6 RISC-V ELF"
+    },
+    {
+      "file": "lammps-riscv64_2026.3_riscv64.deb",
+      "name": "lammps-riscv64",
+      "version": "2026.3",
+      "size_kb": 2526.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "lammps-rvv_2026.3_riscv64.deb",
+      "name": "lammps-rvv",
+      "version": "2026.3",
+      "size_kb": 2585.8,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "lapack_3.12.0_riscv64.deb",
+      "name": "lapack",
+      "version": "3.12.0",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "libarchive-riscv64_3.7.2_riscv64.deb",
+      "name": "libarchive-riscv64",
+      "version": "3.7.2",
+      "size_kb": 845.6,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "libb2-riscv64_0.98.1_riscv64.deb",
+      "name": "libb2-riscv64",
+      "version": "0.98.1",
+      "size_kb": 29.6,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "libbsd-riscv64_0.11.7_riscv64.deb",
+      "name": "libbsd-riscv64",
+      "version": "0.11.7",
+      "size_kb": 102.0,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "libdeflate-riscv64_1.19_riscv64.deb",
+      "name": "libdeflate-riscv64",
+      "version": "1.19",
+      "size_kb": 71.0,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "3/3 RISC-V ELF"
+    },
+    {
+      "file": "libmd-riscv64_1.0.4_riscv64.deb",
+      "name": "libmd-riscv64",
+      "version": "1.0.4",
+      "size_kb": 39.8,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "libpng-riscv64_1.6.43_riscv64.deb",
+      "name": "libpng-riscv64",
+      "version": "1.6.43",
+      "size_kb": 347.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "3/3 RISC-V ELF"
+    },
+    {
+      "file": "libsigsegv-riscv64_2.14_riscv64.deb",
+      "name": "libsigsegv-riscv64",
+      "version": "2.14",
+      "size_kb": 12.6,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "libuuid-riscv64_2.39_riscv64.deb",
+      "name": "libuuid-riscv64",
+      "version": "2.39",
+      "size_kb": 28.9,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "libxc-riscv64_6.2.2_riscv64.deb",
+      "name": "libxc-riscv64",
+      "version": "6.2.2",
+      "size_kb": 8925.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "libyaml-riscv64_0.2.5_riscv64.deb",
+      "name": "libyaml-riscv64",
+      "version": "0.2.5",
+      "size_kb": 130.7,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "lz4-riscv64_1.9.4_riscv64.deb",
+      "name": "lz4-riscv64",
+      "version": "1.9.4",
+      "size_kb": 227.9,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "oofem_2.6_riscv64.deb",
+      "name": "oofem",
+      "version": "2.6",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "openblas-riscv64_0.3.26_riscv64.deb",
+      "name": "openblas-riscv64",
+      "version": "0.3.26",
+      "size_kb": 7886.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "openblas-rvv_0.3.26_riscv64.deb",
+      "name": "openblas-rvv",
+      "version": "0.3.26",
+      "size_kb": 3400.6,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "opencv-riscv64_4.10.0_riscv64.deb",
+      "name": "opencv-riscv64",
+      "version": "4.10.0",
+      "size_kb": 32059.7,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "5/5 RISC-V ELF"
+    },
+    {
+      "file": "openmm-riscv64_8.5.0_riscv64.deb",
+      "name": "openmm-riscv64",
+      "version": "8.5.0",
+      "size_kb": 2130.1,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "10/10 RISC-V ELF"
+    },
+    {
+      "file": "pcre2-riscv64_10.42_riscv64.deb",
+      "name": "pcre2-riscv64",
+      "version": "10.42",
+      "size_kb": 349.8,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "petsc-rvv_3.21.0_riscv64.deb",
+      "name": "petsc-rvv",
+      "version": "3.21.0",
+      "size_kb": 39047.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "3/3 RISC-V ELF"
+    },
+    {
+      "file": "scotch-riscv64_7.0.4_riscv64.deb",
+      "name": "scotch-riscv64",
+      "version": "7.0.4",
+      "size_kb": 548.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "spooles_2.2_riscv64.deb",
+      "name": "spooles",
+      "version": "2.2",
+      "size_kb": 808.3,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "stream-rvv_5.10_riscv64.deb",
+      "name": "stream-rvv",
+      "version": "5.10",
+      "size_kb": 261.0,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    },
+    {
+      "file": "sundials-rvv_6.7.0_riscv64.deb",
+      "name": "sundials-rvv",
+      "version": "6.7.0",
+      "size_kb": 305.2,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "6/6 RISC-V ELF"
+    },
+    {
+      "file": "superlu-rvv_5.3.0_riscv64.deb",
+      "name": "superlu-rvv",
+      "version": "5.3.0",
+      "size_kb": 339.6,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "tensorflow-lite-rvv_2.17.0_riscv64.deb",
+      "name": "tensorflow-lite-rvv",
+      "version": "2.17.0",
+      "size_kb": 3390.8,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "header-only"
+    },
+    {
+      "file": "xxhash-riscv64_0.8.2_riscv64.deb",
+      "name": "xxhash-riscv64",
+      "version": "0.8.2",
+      "size_kb": 125.5,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "2/2 RISC-V ELF"
+    },
+    {
+      "file": "zlib-riscv64_1.3.1_riscv64.deb",
+      "name": "zlib-riscv64",
+      "version": "1.3.1",
+      "size_kb": 128.1,
+      "status": "PASS",
+      "reason": null,
+      "arch": "riscv64",
+      "elf": "1/1 RISC-V ELF"
+    }
+  ]
+}

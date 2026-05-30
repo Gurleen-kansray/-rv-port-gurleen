@@ -52,7 +52,9 @@ for gate in [("DGEMM","50","2.17e-15"),("BLAS L1","7","—"),("BLAS L2","4","6.5
 
 lines.append("\n## One-Command Reproduce")
 lines.append("```bash")
-lines.append("python3 automation/rvv_audit.py        # extract RVV opcodes from all debs")
+lines.append("python3 verify_gurleen_port.py           # 6 gates, 164 ops
+python3 automation/audit_engine_v2.py --all --debs-dir debs --no-graph  # 41 debs
+python3 automation/dashboard.py        # regenerate this dashboard
 lines.append("python3 automation/dashboard.py        # regenerate this dashboard")
 lines.append("python3 automation/audit_engine_v2.py --all --debs-dir debs  # full audit")
 lines.append("```")

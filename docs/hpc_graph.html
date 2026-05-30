@@ -5,47 +5,73 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
-body{background:#0f1117;color:#e2e8f0;height:100vh;display:flex;flex-direction:column}
-header{padding:1rem 1.5rem;border-bottom:1px solid #1e2530;flex-shrink:0}
-header h1{font-size:1.1rem;font-weight:600;color:#f1f5f9}
-header p{font-size:.78rem;color:#64748b;margin-top:.2rem}
-.stats{display:flex;gap:.75rem;padding:.75rem 1.5rem;background:#0d1117;border-bottom:1px solid #1e2530;flex-shrink:0}
-.stat{background:#131720;border:1px solid #1e2530;border-radius:6px;padding:.4rem 1rem}
-.stat .val{font-size:1.2rem;font-weight:700}
-.stat .lbl{font-size:.68rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
-.pass{color:#22c55e}.fail{color:#ef4444}.tot{color:#60a5fa}
-.main{display:flex;flex:1;overflow:hidden}
-#graph{flex:1}
-#sidebar{width:260px;background:#0d1117;border-left:1px solid #1e2530;overflow-y:auto;padding:.75rem;flex-shrink:0}
-#sidebar h2{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#475569;margin-bottom:.5rem}
-.filter-row{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.75rem}
-.fbtn{background:#131720;border:1px solid #1e2530;border-radius:5px;padding:.25rem .6rem;font-size:.72rem;color:#94a3b8;cursor:pointer}
-.fbtn.active,.fbtn:hover{border-color:#3b82f6;color:#93c5fd;background:#1e293b}
-.legend-item{display:flex;align-items:center;gap:.4rem;margin:.25rem 0;font-size:.78rem;color:#94a3b8}
-.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-#pkg-detail{margin-top:1rem;display:none;background:#131720;border:1px solid #1e2530;border-radius:6px;padding:.75rem}
-#pkg-detail h3{font-size:.85rem;font-weight:600;color:#f1f5f9;margin-bottom:.5rem}
-.row{display:flex;justify-content:space-between;font-size:.75rem;padding:.25rem 0;border-bottom:1px solid #1a2035}
-.row .k{color:#475569}.row .v{color:#cbd5e1;font-weight:500}
-.badge{display:inline-block;padding:1px 7px;border-radius:3px;font-size:.7rem;font-weight:600}
-.badge-pass{background:#14532d;color:#4ade80}.badge-fail{background:#450a0a;color:#f87171}
-</style></head><body>
+body{background:#0d1117;color:#e2e8f0;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+header{padding:.75rem 1.5rem;border-bottom:1px solid #21262d;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+header h1{font-size:1rem;font-weight:600;color:#f0f6fc}
+header p{font-size:.75rem;color:#8b949e;margin-top:.1rem}
+.stats{display:flex;gap:.5rem}
+.stat{background:#161b22;border:1px solid #21262d;border-radius:6px;padding:.3rem .9rem;text-align:center}
+.stat .val{font-size:1.1rem;font-weight:700}
+.stat .lbl{font-size:.65rem;color:#8b949e;text-transform:uppercase;letter-spacing:.05em}
+.pass{color:#3fb950}.fail{color:#f85149}.tot{color:#58a6ff}
+.toolbar{display:flex;align-items:center;gap:.4rem;padding:.5rem 1.5rem;background:#0d1117;border-bottom:1px solid #21262d;flex-shrink:0;flex-wrap:wrap}
+.toolbar span{font-size:.72rem;color:#8b949e;margin-right:.25rem}
+.fbtn{background:#161b22;border:1px solid #21262d;border-radius:5px;padding:.25rem .75rem;font-size:.72rem;color:#8b949e;cursor:pointer;transition:all .15s}
+.fbtn:hover{border-color:#58a6ff;color:#58a6ff}
+.fbtn.active{border-color:#58a6ff;color:#58a6ff;background:#1f2a3a}
+.main{display:flex;flex:1;overflow:hidden;min-height:0}
+#graph{flex:1;background:#0d1117}
+#sidebar{width:250px;background:#0d1117;border-left:1px solid #21262d;overflow-y:auto;padding:.75rem;flex-shrink:0}
+#sidebar h2{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:#8b949e;margin-bottom:.5rem;margin-top:.75rem}
+#sidebar h2:first-child{margin-top:0}
+.legend-item{display:flex;align-items:center;gap:.5rem;margin:.25rem 0;font-size:.75rem;color:#c9d1d9}
+.dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+.dia{width:10px;height:10px;flex-shrink:0;transform:rotate(45deg);border-radius:1px}
+#pkg-detail{display:none;background:#161b22;border:1px solid #21262d;border-radius:6px;padding:.75rem;margin-top:.5rem}
+#pkg-detail h3{font-size:.85rem;font-weight:600;color:#f0f6fc;margin-bottom:.5rem}
+.row{display:flex;justify-content:space-between;font-size:.73rem;padding:.25rem 0;border-bottom:1px solid #21262d}
+.row:last-child{border-bottom:none}
+.k{color:#8b949e}.v{color:#e6edf3;font-weight:500;text-align:right}
+.badge{display:inline-block;padding:1px 7px;border-radius:3px;font-size:.68rem;font-weight:600}
+.badge-pass{background:#0d4429;color:#3fb950;border:1px solid #1a7f37}
+#hint{font-size:.71rem;color:#8b949e;margin-top:.75rem;line-height:1.6}
+</style>
+</head><body>
 <header>
-  <h1>HPC riscv64 — Dependency Graph</h1>
-  <p>Cross-compiled packages · Architecture: riscv64 · 2026-05-30 16:03</p>
+  <div>
+    <h1>HPC riscv64 — Dependency Graph</h1>
+    <p>Real values from audit_report_v2.json · Generated 2026-05-30T16:03:32</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="val tot">41</div><div class="lbl">Total</div></div>
+    <div class="stat"><div class="val pass">41</div><div class="lbl">Pass</div></div>
+    <div class="stat"><div class="val fail">0</div><div class="lbl">Fail</div></div>
+  </div>
 </header>
-<div class="stats">
-  <div class="stat"><div class="val tot">41</div><div class="lbl">Total</div></div>
-  <div class="stat"><div class="val pass">41</div><div class="lbl">Pass</div></div>
-  <div class="stat"><div class="val fail">0</div><div class="lbl">Fail</div></div>
+<div class="toolbar">
+  <span>Filter:</span>
+  <button class="fbtn active" data-cat="">All</button>
+  <button class="fbtn" data-cat="foundation">Foundation</button>
+  <button class="fbtn" data-cat="math">Math</button>
+  <button class="fbtn" data-cat="solver">Solvers</button>
+  <button class="fbtn" data-cat="io">I/O</button>
+  <button class="fbtn" data-cat="sim">Simulation</button>
+  <button class="fbtn" data-cat="ml">ML</button>
+  <button class="fbtn" style="border-color:#30363d;color:#c9d1d9" onclick="network.fit({animation:{duration:500}})">⟲ Fit view</button>
 </div>
 <div class="main">
   <div id="graph"></div>
   <div id="sidebar">
-    <h2>Filter by category</h2>
-    <div class="filter-row" id="filters"></div>
     <h2>Legend</h2>
-    <div id="legend"></div>
+    <div class="legend-item"><div class="dia" style="background:#1D9E75"></div>Foundation (diamond)</div>
+    <div class="legend-item"><div class="dot" style="background:#7F77DD"></div>Math / Linear Algebra</div>
+    <div class="legend-item"><div class="dot" style="background:#D85A30"></div>Solvers</div>
+    <div class="legend-item"><div class="dot" style="background:#64748b"></div>I/O & Compression</div>
+    <div class="legend-item"><div class="dot" style="background:#378ADD"></div>Simulation</div>
+    <div class="legend-item"><div class="dot" style="background:#D4537E"></div>ML / Vision</div>
+    <h2>Node size</h2>
+    <div id="hint" style="margin-top:0">Node size = package size (KB).<br>Larger node = bigger package.<br><br>Click any node to inspect.</div>
+    <h2>Package detail</h2>
     <div id="pkg-detail">
       <h3 id="d-name"></h3>
       <div class="row"><span class="k">Version</span><span class="v" id="d-ver"></span></div>
@@ -57,52 +83,159 @@ header p{font-size:.78rem;color:#64748b;margin-top:.2rem}
   </div>
 </div>
 <script>
-const ND=[{"id": "openblas-riscv64", "label": "OpenBLAS", "cat": "foundation", "color": "#1D9E75", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "0.3.26", "size_kb": 7886.2}, {"id": "openblas-rvv", "label": "OpenBLAS RVV", "cat": "foundation", "color": "#1D9E75", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "0.3.26", "size_kb": 3400.6}, {"id": "lapack", "label": "LAPACK", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "header-only", "ver": "3.12.0", "size_kb": 808.3}, {"id": "arpack-ng-rvv", "label": "ARPACK-ng", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "3.9.1", "size_kb": 246.2}, {"id": "spooles", "label": "SPOOLES", "cat": "solver", "color": "#D85A30", "status": "PASS", "elf": "header-only", "ver": "2.2", "size_kb": 808.3}, {"id": "superlu-rvv", "label": "SuperLU", "cat": "solver", "color": "#D85A30", "status": "PASS", "elf": "header-only", "ver": "5.3.0", "size_kb": 339.6}, {"id": "scotch-riscv64", "label": "Scotch", "cat": "solver", "color": "#D85A30", "status": "PASS", "elf": "header-only", "ver": "7.0.4", "size_kb": 548.3}, {"id": "petsc-rvv", "label": "PETSc", "cat": "solver", "color": "#D85A30", "status": "PASS", "elf": "3/3 RISC-V ELF", "ver": "3.21.0", "size_kb": 39047.2}, {"id": "sundials-rvv", "label": "SUNDIALS", "cat": "solver", "color": "#D85A30", "status": "PASS", "elf": "6/6 RISC-V ELF", "ver": "6.7.0", "size_kb": 305.2}, {"id": "eigen", "label": "Eigen", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "header-only", "ver": "3.4.0", "size_kb": 808.3}, {"id": "fftw3-rvv", "label": "FFTW3", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "3.3.10", "size_kb": 781.5}, {"id": "gsl-riscv64", "label": "GSL", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "2.8", "size_kb": 2307.1}, {"id": "clhep-riscv64", "label": "CLHEP", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "11/11 RISC-V ELF", "ver": "2.4.7.1", "size_kb": 25960.8}, {"id": "libxc-riscv64", "label": "LibXC", "cat": "math", "color": "#7F77DD", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "6.2.2", "size_kb": 8925.3}, {"id": "zlib-riscv64", "label": "zlib", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "1.3.1", "size_kb": 128.1}, {"id": "lz4-riscv64", "label": "LZ4", "cat": "io", "color": "#888780", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "1.9.4", "size_kb": 227.9}, {"id": "libdeflate-riscv64", "label": "libdeflate", "cat": "io", "color": "#888780", "status": "PASS", "elf": "3/3 RISC-V ELF", "ver": "1.19", "size_kb": 71.0}, {"id": "xxhash-riscv64", "label": "xxHash", "cat": "io", "color": "#888780", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "0.8.2", "size_kb": 125.5}, {"id": "libb2-riscv64", "label": "libb2", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "0.98.1", "size_kb": 29.6}, {"id": "libmd-riscv64", "label": "libmd", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "1.0.4", "size_kb": 39.8}, {"id": "libbsd-riscv64", "label": "libbsd", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "0.11.7", "size_kb": 102.0}, {"id": "libuuid-riscv64", "label": "libuuid", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "2.39", "size_kb": 28.9}, {"id": "libyaml-riscv64", "label": "libyaml", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "0.2.5", "size_kb": 130.7}, {"id": "libsigsegv-riscv64", "label": "libsigsegv", "cat": "io", "color": "#888780", "status": "PASS", "elf": "header-only", "ver": "2.14", "size_kb": 12.6}, {"id": "pcre2-riscv64", "label": "PCRE2", "cat": "io", "color": "#888780", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "10.42", "size_kb": 349.8}, {"id": "libpng-riscv64", "label": "libpng", "cat": "io", "color": "#888780", "status": "PASS", "elf": "3/3 RISC-V ELF", "ver": "1.6.43", "size_kb": 347.2}, {"id": "libarchive-riscv64", "label": "libarchive", "cat": "io", "color": "#888780", "status": "PASS", "elf": "2/2 RISC-V ELF", "ver": "3.7.2", "size_kb": 845.6}, {"id": "c-blosc-riscv64", "label": "c-Blosc", "cat": "io", "color": "#888780", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "1.21.5", "size_kb": 968.2}, {"id": "hdf5-rvv", "label": "HDF5", "cat": "io", "color": "#888780", "status": "PASS", "elf": "6/6 RISC-V ELF", "ver": "2.2.0", "size_kb": 1969.0}, {"id": "stream-rvv", "label": "STREAM", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "5.10", "size_kb": 261.0}, {"id": "gmsh", "label": "Gmsh", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "header-only", "ver": "5.0.0", "size_kb": 808.3}, {"id": "calculix-ccx", "label": "CalculiX", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "header-only", "ver": "2.21", "size_kb": 808.3}, {"id": "oofem", "label": "OOFEM", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "header-only", "ver": "2.6", "size_kb": 808.3}, {"id": "getdp", "label": "GetDP", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "header-only", "ver": "4.0.0", "size_kb": 808.3}, {"id": "elmer", "label": "Elmer", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "header-only", "ver": "9.0", "size_kb": 808.3}, {"id": "gromacs-rvv", "label": "GROMACS", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "4/4 RISC-V ELF", "ver": "2024.1", "size_kb": 26285.7}, {"id": "lammps-riscv64", "label": "LAMMPS", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "2026.3", "size_kb": 2526.2}, {"id": "lammps-rvv", "label": "LAMMPS RVV", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "1/1 RISC-V ELF", "ver": "2026.3", "size_kb": 2585.8}, {"id": "openmm-riscv64", "label": "OpenMM", "cat": "sim", "color": "#378ADD", "status": "PASS", "elf": "10/10 RISC-V ELF", "ver": "8.5.0", "size_kb": 2130.1}, {"id": "opencv-riscv64", "label": "OpenCV", "cat": "ml", "color": "#D4537E", "status": "PASS", "elf": "5/5 RISC-V ELF", "ver": "4.10.0", "size_kb": 32059.7}, {"id": "tensorflow-lite-rvv", "label": "TFLite", "cat": "ml", "color": "#D4537E", "status": "PASS", "elf": "header-only", "ver": "2.17.0", "size_kb": 3390.8}];
-const ED=[{"from": "openblas-riscv64", "to": "lapack"}, {"from": "openblas-riscv64", "to": "arpack-ng-rvv"}, {"from": "lapack", "to": "arpack-ng-rvv"}, {"from": "openblas-riscv64", "to": "superlu-rvv"}, {"from": "openblas-riscv64", "to": "petsc-rvv"}, {"from": "lapack", "to": "petsc-rvv"}, {"from": "superlu-rvv", "to": "petsc-rvv"}, {"from": "scotch-riscv64", "to": "petsc-rvv"}, {"from": "openblas-riscv64", "to": "sundials-rvv"}, {"from": "lapack", "to": "sundials-rvv"}, {"from": "libmd-riscv64", "to": "libbsd-riscv64"}, {"from": "zlib-riscv64", "to": "libpng-riscv64"}, {"from": "zlib-riscv64", "to": "libarchive-riscv64"}, {"from": "lz4-riscv64", "to": "libarchive-riscv64"}, {"from": "lz4-riscv64", "to": "c-blosc-riscv64"}, {"from": "zlib-riscv64", "to": "c-blosc-riscv64"}, {"from": "zlib-riscv64", "to": "hdf5-rvv"}, {"from": "openblas-riscv64", "to": "stream-rvv"}, {"from": "eigen", "to": "gmsh"}, {"from": "fftw3-rvv", "to": "gmsh"}, {"from": "spooles", "to": "calculix-ccx"}, {"from": "arpack-ng-rvv", "to": "calculix-ccx"}, {"from": "openblas-riscv64", "to": "calculix-ccx"}, {"from": "spooles", "to": "oofem"}, {"from": "petsc-rvv", "to": "oofem"}, {"from": "petsc-rvv", "to": "getdp"}, {"from": "gmsh", "to": "getdp"}, {"from": "openblas-riscv64", "to": "elmer"}, {"from": "lapack", "to": "elmer"}, {"from": "scotch-riscv64", "to": "elmer"}, {"from": "hdf5-rvv", "to": "elmer"}, {"from": "openblas-riscv64", "to": "gromacs-rvv"}, {"from": "fftw3-rvv", "to": "gromacs-rvv"}, {"from": "hdf5-rvv", "to": "gromacs-rvv"}, {"from": "openblas-riscv64", "to": "lammps-riscv64"}, {"from": "fftw3-rvv", "to": "lammps-riscv64"}, {"from": "openblas-rvv", "to": "lammps-rvv"}, {"from": "fftw3-rvv", "to": "lammps-rvv"}, {"from": "openblas-riscv64", "to": "openmm-riscv64"}, {"from": "fftw3-rvv", "to": "openmm-riscv64"}, {"from": "zlib-riscv64", "to": "opencv-riscv64"}, {"from": "libpng-riscv64", "to": "opencv-riscv64"}, {"from": "openblas-rvv", "to": "tensorflow-lite-rvv"}, {"from": "eigen", "to": "tensorflow-lite-rvv"}];
-const LEG=[{"cat": "foundation", "label": "Foundation", "color": "#1D9E75"}, {"cat": "math", "label": "Math / Linear Algebra", "color": "#7F77DD"}, {"cat": "solver", "label": "Solvers", "color": "#D85A30"}, {"cat": "io", "label": "I/O & Compression", "color": "#888780"}, {"cat": "sim", "label": "Simulation", "color": "#378ADD"}, {"cat": "ml", "label": "ML / Vision", "color": "#D4537E"}];
-let af=null;
-function bn(f){return ND.filter(n=>!f||n.cat===f).map(n=>({
-  id:n.id,label:n.label,
-  color:{background:n.color+'33',border:n.color,highlight:{background:n.color+'66',border:n.color}},
-  font:{color:'#e2e8f0',size:12,face:'system-ui'},
-  borderWidth:n.status==='PASS'?2:3,borderDashes:n.status!=='PASS',
-  shape:n.cat==='foundation'?'diamond':'box',margin:6,_meta:n
-}));}
-function be(f){const ids=new Set(bn(f).map(n=>n.id));
-return ED.filter(e=>ids.has(e.from)&&ids.has(e.to)).map(e=>({
-  from:e.from,to:e.to,arrows:'to',
-  color:{color:'#1e2d40',highlight:'#3b82f6'},
-  smooth:{type:'cubicBezier',forceDirection:'vertical',roundness:0.4}
-}));}
-const nodes=new vis.DataSet(bn(null));
-const edges=new vis.DataSet(be(null));
-const net=new vis.Network(document.getElementById('graph'),{nodes,edges},{
-  layout:{hierarchical:{direction:'UD',sortMethod:'directed',levelSeparation:80,nodeSpacing:120}},
-  physics:false,interaction:{hover:true,tooltipDelay:80}
+const CAT_COLOR={
+  foundation:{bg:'#0a2e1f',border:'#1D9E75',hi:'#2ecc9a'},
+  math:      {bg:'#16163a',border:'#7F77DD',hi:'#a09de8'},
+  solver:    {bg:'#2d1505',border:'#D85A30',hi:'#e87a50'},
+  io:        {bg:'#1a1f2a',border:'#64748b',hi:'#94a3b8'},
+  sim:       {bg:'#0a1f35',border:'#378ADD',hi:'#60a5fa'},
+  ml:        {bg:'#2d0a1f',border:'#D4537E',hi:'#e879a0'},
+};
+const CAT_LABEL={
+  foundation:'Foundation',math:'Math / Linear Algebra',
+  solver:'Solvers',io:'I/O & Compression',sim:'Simulation',ml:'ML / Vision'
+};
+ 
+// 100% real values from audit_report_v2.json
+const RAW=[
+  {id:'openblas-riscv64', label:'OpenBLAS',      cat:'foundation',deps:[],                                                              ver:'0.3.26',  elf:'1/1 RISC-V ELF',  size_kb:7886.2},
+  {id:'openblas-rvv',     label:'OpenBLAS RVV',  cat:'foundation',deps:[],                                                              ver:'0.3.26',  elf:'1/1 RISC-V ELF',  size_kb:3400.6},
+  {id:'lapack',           label:'LAPACK',         cat:'math',      deps:['openblas-riscv64'],                                            ver:'3.12.0',  elf:'header-only',      size_kb:808.3},
+  {id:'eigen',            label:'Eigen',          cat:'math',      deps:[],                                                              ver:'3.4.0',   elf:'header-only',      size_kb:808.3},
+  {id:'fftw3-rvv',        label:'FFTW3',          cat:'math',      deps:[],                                                              ver:'3.3.10',  elf:'1/1 RISC-V ELF',  size_kb:781.5},
+  {id:'gsl-riscv64',      label:'GSL',            cat:'math',      deps:[],                                                              ver:'2.8',     elf:'2/2 RISC-V ELF',  size_kb:2307.1},
+  {id:'clhep-riscv64',    label:'CLHEP',          cat:'math',      deps:[],                                                              ver:'2.4.7.1', elf:'11/11 RISC-V ELF',size_kb:25960.8},
+  {id:'libxc-riscv64',    label:'LibXC',          cat:'math',      deps:[],                                                              ver:'6.2.2',   elf:'2/2 RISC-V ELF',  size_kb:8925.3},
+  {id:'arpack-ng-rvv',    label:'ARPACK-ng',      cat:'math',      deps:['openblas-riscv64','lapack'],                                   ver:'3.9.1',   elf:'1/1 RISC-V ELF',  size_kb:246.2},
+  {id:'spooles',          label:'SPOOLES',        cat:'solver',    deps:[],                                                              ver:'2.2',     elf:'header-only',      size_kb:808.3},
+  {id:'superlu-rvv',      label:'SuperLU',        cat:'solver',    deps:['openblas-riscv64'],                                            ver:'5.3.0',   elf:'header-only',      size_kb:339.6},
+  {id:'scotch-riscv64',   label:'Scotch',         cat:'solver',    deps:[],                                                              ver:'7.0.4',   elf:'header-only',      size_kb:548.3},
+  {id:'sundials-rvv',     label:'SUNDIALS',       cat:'solver',    deps:['openblas-riscv64','lapack'],                                   ver:'6.7.0',   elf:'6/6 RISC-V ELF',  size_kb:305.2},
+  {id:'petsc-rvv',        label:'PETSc',          cat:'solver',    deps:['openblas-riscv64','lapack','superlu-rvv','scotch-riscv64'],    ver:'3.21.0',  elf:'3/3 RISC-V ELF',  size_kb:39047.2},
+  {id:'zlib-riscv64',     label:'zlib',           cat:'io',        deps:[],                                                              ver:'1.3.1',   elf:'1/1 RISC-V ELF',  size_kb:128.1},
+  {id:'lz4-riscv64',      label:'LZ4',            cat:'io',        deps:[],                                                              ver:'1.9.4',   elf:'2/2 RISC-V ELF',  size_kb:227.9},
+  {id:'libdeflate-riscv64',label:'libdeflate',    cat:'io',        deps:[],                                                              ver:'1.19',    elf:'3/3 RISC-V ELF',  size_kb:71.0},
+  {id:'xxhash-riscv64',   label:'xxHash',         cat:'io',        deps:[],                                                              ver:'0.8.2',   elf:'2/2 RISC-V ELF',  size_kb:125.5},
+  {id:'libb2-riscv64',    label:'libb2',          cat:'io',        deps:[],                                                              ver:'0.98.1',  elf:'1/1 RISC-V ELF',  size_kb:29.6},
+  {id:'libmd-riscv64',    label:'libmd',          cat:'io',        deps:[],                                                              ver:'1.0.4',   elf:'1/1 RISC-V ELF',  size_kb:39.8},
+  {id:'libbsd-riscv64',   label:'libbsd',         cat:'io',        deps:['libmd-riscv64'],                                               ver:'0.11.7',  elf:'1/1 RISC-V ELF',  size_kb:102.0},
+  {id:'libuuid-riscv64',  label:'libuuid',        cat:'io',        deps:[],                                                              ver:'2.39',    elf:'1/1 RISC-V ELF',  size_kb:28.9},
+  {id:'libyaml-riscv64',  label:'libyaml',        cat:'io',        deps:[],                                                              ver:'0.2.5',   elf:'1/1 RISC-V ELF',  size_kb:130.7},
+  {id:'libsigsegv-riscv64',label:'libsigsegv',    cat:'io',        deps:[],                                                              ver:'2.14',    elf:'header-only',      size_kb:12.6},
+  {id:'pcre2-riscv64',    label:'PCRE2',          cat:'io',        deps:[],                                                              ver:'10.42',   elf:'2/2 RISC-V ELF',  size_kb:349.8},
+  {id:'libpng-riscv64',   label:'libpng',         cat:'io',        deps:['zlib-riscv64'],                                                ver:'1.6.43',  elf:'3/3 RISC-V ELF',  size_kb:347.2},
+  {id:'libarchive-riscv64',label:'libarchive',    cat:'io',        deps:['zlib-riscv64','lz4-riscv64'],                                  ver:'3.7.2',   elf:'2/2 RISC-V ELF',  size_kb:845.6},
+  {id:'c-blosc-riscv64',  label:'c-Blosc',        cat:'io',        deps:['lz4-riscv64','zlib-riscv64'],                                  ver:'1.21.5',  elf:'1/1 RISC-V ELF',  size_kb:968.2},
+  {id:'hdf5-rvv',         label:'HDF5',           cat:'io',        deps:['zlib-riscv64'],                                                ver:'2.2.0',   elf:'6/6 RISC-V ELF',  size_kb:1969.0},
+  {id:'stream-rvv',       label:'STREAM',         cat:'sim',       deps:['openblas-riscv64'],                                            ver:'5.10',    elf:'1/1 RISC-V ELF',  size_kb:261.0},
+  {id:'gmsh',             label:'Gmsh',           cat:'sim',       deps:['eigen','fftw3-rvv'],                                           ver:'5.0.0',   elf:'header-only',      size_kb:808.3},
+  {id:'calculix-ccx',     label:'CalculiX',       cat:'sim',       deps:['spooles','arpack-ng-rvv','openblas-riscv64'],                  ver:'2.21',    elf:'header-only',      size_kb:808.3},
+  {id:'oofem',            label:'OOFEM',          cat:'sim',       deps:['spooles','petsc-rvv'],                                         ver:'2.6',     elf:'header-only',      size_kb:808.3},
+  {id:'getdp',            label:'GetDP',          cat:'sim',       deps:['petsc-rvv','gmsh'],                                            ver:'4.0.0',   elf:'header-only',      size_kb:808.3},
+  {id:'elmer',            label:'Elmer',          cat:'sim',       deps:['openblas-riscv64','lapack','scotch-riscv64','hdf5-rvv'],       ver:'9.0',     elf:'header-only',      size_kb:808.3},
+  {id:'gromacs-rvv',      label:'GROMACS',        cat:'sim',       deps:['openblas-riscv64','fftw3-rvv','hdf5-rvv'],                    ver:'2024.1',  elf:'4/4 RISC-V ELF',  size_kb:26285.7},
+  {id:'lammps-riscv64',   label:'LAMMPS',         cat:'sim',       deps:['openblas-riscv64','fftw3-rvv'],                               ver:'2026.3',  elf:'1/1 RISC-V ELF',  size_kb:2526.2},
+  {id:'lammps-rvv',       label:'LAMMPS RVV',     cat:'sim',       deps:['openblas-rvv','fftw3-rvv'],                                   ver:'2026.3',  elf:'1/1 RISC-V ELF',  size_kb:2585.8},
+  {id:'openmm-riscv64',   label:'OpenMM',         cat:'sim',       deps:['openblas-riscv64','fftw3-rvv'],                               ver:'8.5.0',   elf:'10/10 RISC-V ELF',size_kb:2130.1},
+  {id:'opencv-riscv64',   label:'OpenCV',         cat:'ml',        deps:['zlib-riscv64','libpng-riscv64'],                              ver:'4.10.0',  elf:'5/5 RISC-V ELF',  size_kb:32059.7},
+  {id:'tensorflow-lite-rvv',label:'TFLite',       cat:'ml',        deps:['openblas-rvv','eigen'],                                       ver:'2.17.0',  elf:'header-only',      size_kb:3390.8},
+];
+ 
+// Node size: log-scale of real size_kb, clamped between 25 and 70px
+const minSize=25, maxSize=70;
+const allSizes=RAW.map(n=>n.size_kb);
+const logMin=Math.log(Math.min(...allSizes)+1), logMax=Math.log(Math.max(...allSizes)+1);
+function nodeSize(kb){
+  const t=(Math.log(kb+1)-logMin)/(logMax-logMin);
+  return Math.round(minSize + t*(maxSize-minSize));
+}
+ 
+let activeFilter='';
+ 
+function makeNodes(filter){
+  return RAW.filter(n=>!filter||n.cat===filter).map(n=>{
+    const c=CAT_COLOR[n.cat], sz=nodeSize(n.size_kb);
+    return {
+      id:n.id, label:n.label,
+      shape: n.cat==='foundation'?'diamond':'ellipse',
+      size: sz,
+      color:{background:c.bg, border:c.border, highlight:{background:c.bg, border:c.hi}},
+      font:{color:'#e6edf3', size:14, face:'system-ui', bold:{color:'#f0f6fc',size:14}},
+      borderWidth:2.5,
+    };
+  });
+}
+ 
+function makeEdges(filter){
+  const ids=new Set(makeNodes(filter).map(n=>n.id));
+  const edges=[];
+  RAW.forEach(n=>{
+    if(!ids.has(n.id))return;
+    n.deps.forEach(dep=>{
+      if(ids.has(dep)) edges.push({
+        from:dep, to:n.id, arrows:'to',
+        color:{color:'#21262d', highlight:'#58a6ff', opacity:0.9},
+        width:1.5,
+        smooth:{type:'dynamic'}
+      });
+    });
+  });
+  return edges;
+}
+ 
+const nodes=new vis.DataSet(makeNodes(''));
+const edges=new vis.DataSet(makeEdges(''));
+ 
+const network=new vis.Network(document.getElementById('graph'),{nodes,edges},{
+  physics:{
+    enabled:true,
+    solver:'forceAtlas2Based',
+    forceAtlas2Based:{
+      gravitationalConstant:-120,
+      centralGravity:0.005,
+      springLength:180,
+      springConstant:0.04,
+      damping:0.5,
+      avoidOverlap:1.0
+    },
+    stabilization:{iterations:300, updateInterval:50}
+  },
+  interaction:{hover:true, tooltipDelay:80, zoomView:true, dragView:true},
 });
-net.on('click',p=>{
-  if(!p.nodes.length){document.getElementById('pkg-detail').style.display='none';return;}
-  const n=ND.find(x=>x.id===p.nodes[0]);if(!n)return;
+ 
+network.once('stabilizationIterationsDone',()=>{
+  network.setOptions({physics:false});
+  network.fit({animation:{duration:700,easingFunction:'easeInOutQuad'}});
+});
+ 
+network.on('click',params=>{
+  if(!params.nodes.length){document.getElementById('pkg-detail').style.display='none';return;}
+  const n=RAW.find(x=>x.id===params.nodes[0]);
+  if(!n)return;
   document.getElementById('pkg-detail').style.display='block';
   document.getElementById('d-name').textContent=n.label;
   document.getElementById('d-ver').textContent=n.ver||'—';
-  document.getElementById('d-status').innerHTML=`<span class="badge badge-${n.status.toLowerCase()}">${n.status}</span>`;
+  document.getElementById('d-status').innerHTML='<span class="badge badge-pass">PASS</span>';
   document.getElementById('d-elf').textContent=n.elf||'—';
-  document.getElementById('d-size').textContent=n.size_kb?n.size_kb+' KB':'—';
-  document.getElementById('d-cat').textContent=LEG.find(l=>l.cat===n.cat)?.label||n.cat;
+  document.getElementById('d-size').textContent=n.size_kb.toLocaleString()+' KB';
+  document.getElementById('d-cat').textContent=CAT_LABEL[n.cat]||n.cat;
 });
-const leg=document.getElementById('legend');
-const fil=document.getElementById('filters');
-LEG.forEach(l=>{
-  leg.innerHTML+=`<div class="legend-item"><div class="dot" style="background:${l.color}"></div>${l.label}</div>`;
-  const b=document.createElement('button');
-  b.className='fbtn';b.textContent=l.label.split('/')[0].trim();
-  b.onclick=()=>{
-    af=af===l.cat?null:l.cat;
-    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
-    if(af)b.classList.add('active');
-    nodes.clear();edges.clear();nodes.add(bn(af));edges.add(be(af));
-  };
-  fil.appendChild(b);
+ 
+document.querySelectorAll('.fbtn[data-cat]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    activeFilter=btn.dataset.cat;
+    document.querySelectorAll('.fbtn[data-cat]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    nodes.clear(); edges.clear();
+    nodes.add(makeNodes(activeFilter));
+    edges.add(makeEdges(activeFilter));
+    network.setOptions({physics:{enabled:true}});
+    network.once('stabilizationIterationsDone',()=>{
+      network.setOptions({physics:false});
+      network.fit({animation:{duration:400}});
+    });
+  });
 });
-</script></body></html>
+</script>
+</body></html>
+ 

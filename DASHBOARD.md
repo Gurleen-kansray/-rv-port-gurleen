@@ -1,5 +1,5 @@
 # HPC riscv64 — Master Dashboard
-Generated: 2026-05-30T16:48:58.666192 | Toolchain: GCC 14 + -march=rv64gcv | All debs verified riscv64 ELF
+Generated: 2026-05-30T23:57:13.814941 | Toolchain: GCC 14 + -march=rv64gcv | All debs verified riscv64 ELF
 
 ## Summary
 | Total | Pass | Fail | RVV-Vectorized | Scalar | Validations |
@@ -70,10 +70,9 @@ Generated: 2026-05-30T16:48:58.666192 | Toolchain: GCC 14 + -march=rv64gcv | All
 | LAPACK | 12 | 5.30e-12 | ✅ |
 | SPOOLES | 16 | 2.10e-14 | ✅ |
 | Reproducibility | 10-run | bit-identical | ✅ |
-
-## One-Command Reproduce
-```bash
-python3 automation/rvv_audit.py        # extract RVV opcodes from all debs
-python3 automation/dashboard.py        # regenerate this dashboard
+python3 verify_gurleen_port.py        # 6 gates, 164 ops
+python3 automation/audit_engine_v2.py --all --debs-dir debs --no-graph
+python3 automation/dashboard.py        # regenerate dashboard
+```
 python3 automation/audit_engine_v2.py --all --debs-dir debs  # full audit
 ```

@@ -1,31 +1,24 @@
-name: Cross-compile RISC-V riscv64
+name: HPC Package Audit — riscv64
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install cross-compilation toolchain
+      - name: Install dpkg tools
         run: |
           sudo apt-get update -qq
-          sudo dpkg --add-architecture riscv64
-          sudo apt-get install -qq riscv64-linux-gnu-gcc riscv64-linux-gnu-gfortran cmake
+          sudo apt-get install -qq dpkg-dev binutils file
 
-      - name: Setup riscv64 ports mirror
+      - name: Run audit on all debs
         run: |
-          echo "deb [arch=riscv64] http://ports.ubuntu.com/ubuntu-ports noble main restricted universe multiverse" \
-            | sudo tee /etc/apt/sources.list.d/ubuntu-ports-riscv64.list
-          sudo apt-get update -qq
+          python3 automation/audit_engine_v2.py --all --debs-dir debs
 
-      - name: Build SPOOLES riscv64
-        run: |
-          mkdir -p /tmp/build-spooles && cd /tmp/build-spooles
-          wget -q http://www.netlib.org/linalg/spooles/spooles.2.2.tgz
-          tar xf spooles.2.2.tgz && cd spooles.2.2
-          sed -i 's/^CC =.*/CC = riscv64-linux-gnu-gcc/' Make.inc
-          sed -i 's/^CFLAGS =.*/CFLAGS = -O2 -fcommon/' Make.inc
-make lib
-      # Optional: Add steps here to run tests or upload artifacts
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: audit_report_v2.json

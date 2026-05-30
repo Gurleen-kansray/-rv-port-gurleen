@@ -1,0 +1,289 @@
+{
+  "arpack-ng-rvv": {
+    "setup": 405,
+    "arith": 1203,
+    "ratio_pct": 297,
+    "rvv": true,
+    "binary": "libarpack.a"
+  },
+  "c-blosc-riscv64": {
+    "setup": 0,
+    "arith": 1,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libblosc.a"
+  },
+  "calculix-ccx": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "clhep-riscv64": {
+    "setup": 1423,
+    "arith": 3905,
+    "ratio_pct": 274,
+    "rvv": true,
+    "binary": "libCLHEP.a"
+  },
+  "eigen": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "elmer": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "fftw3-rvv": {
+    "setup": 318,
+    "arith": 676,
+    "ratio_pct": 213,
+    "rvv": true,
+    "binary": "libfftw3.a"
+  },
+  "getdp": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "gmsh": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "gromacs-rvv": {
+    "setup": 62603,
+    "arith": 140629,
+    "ratio_pct": 225,
+    "rvv": true,
+    "binary": "libgromacs.so.9"
+  },
+  "gsl-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libgsl.a"
+  },
+  "hdf5-rvv": {
+    "setup": 6585,
+    "arith": 9820,
+    "ratio_pct": 149,
+    "rvv": true,
+    "binary": "libhdf5.so.1000"
+  },
+  "lammps-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "lmp"
+  },
+  "lammps-rvv": {
+    "setup": 13652,
+    "arith": 26659,
+    "ratio_pct": 195,
+    "rvv": true,
+    "binary": "lmp"
+  },
+  "lapack": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "libarchive-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libarchive.a"
+  },
+  "libb2-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libb2.a"
+  },
+  "libbsd-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libbsd.a"
+  },
+  "libdeflate-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libdeflate.a"
+  },
+  "libmd-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libmd.a"
+  },
+  "libpng-riscv64": {
+    "setup": 453,
+    "arith": 689,
+    "ratio_pct": 152,
+    "rvv": true,
+    "binary": "libpng.a"
+  },
+  "libsigsegv-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libsigsegv.a"
+  },
+  "libuuid-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libuuid.a"
+  },
+  "libxc-riscv64": {
+    "setup": 918,
+    "arith": 3439,
+    "ratio_pct": 375,
+    "rvv": true,
+    "binary": "libxc.so"
+  },
+  "libyaml-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libyaml.a"
+  },
+  "lz4-riscv64": {
+    "setup": 0,
+    "arith": 1,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "liblz4.a"
+  },
+  "oofem": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "openblas-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libopenblas.a"
+  },
+  "openblas-rvv": {
+    "setup": 2333,
+    "arith": 10834,
+    "ratio_pct": 464,
+    "rvv": true,
+    "binary": "libopenblas.so"
+  },
+  "opencv-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libopencv_dnn.a"
+  },
+  "openmm-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libOpenMM.so"
+  },
+  "pcre2-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "libpcre2-8.a"
+  },
+  "petsc-rvv": {
+    "setup": 18606,
+    "arith": 58029,
+    "ratio_pct": 312,
+    "rvv": true,
+    "binary": "libpetsc.so"
+  },
+  "scotch-riscv64": {
+    "setup": 973,
+    "arith": 1311,
+    "ratio_pct": 135,
+    "rvv": true,
+    "binary": "libscotch.a"
+  },
+  "spooles": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "spooles.a"
+  },
+  "stream-rvv": {
+    "setup": 32,
+    "arith": 61,
+    "ratio_pct": 191,
+    "rvv": true,
+    "binary": "stream-rvv"
+  },
+  "sundials-rvv": {
+    "setup": 848,
+    "arith": 3687,
+    "ratio_pct": 435,
+    "rvv": true,
+    "binary": "libsundials_arkode.so.5.7.0"
+  },
+  "superlu-rvv": {
+    "setup": 938,
+    "arith": 2231,
+    "ratio_pct": 238,
+    "rvv": true,
+    "binary": "libsuperlu.a"
+  },
+  "tensorflow-lite-rvv": {
+    "setup": 18539,
+    "arith": 28525,
+    "ratio_pct": 154,
+    "rvv": true,
+    "binary": "libtensorflow-lite.a"
+  },
+  "xxhash-riscv64": {
+    "setup": 0,
+    "arith": 0,
+    "ratio_pct": 0,
+    "rvv": false,
+    "binary": "xxhash.h"
+  },
+  "zlib-riscv64": {
+    "setup": 211,
+    "arith": 259,
+    "ratio_pct": 123,
+    "rvv": true,
+    "binary": "libz.a"
+  }
+}

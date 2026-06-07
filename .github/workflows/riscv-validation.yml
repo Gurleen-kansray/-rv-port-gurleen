@@ -27,7 +27,7 @@ jobs:
         gcc -O2 test_dgemm_extended_50cases.c -o test_dgemm_extended_50 -lm
         ./test_dgemm_extended_50 > dgemm_results.txt 2>&1
         cat dgemm_results.txt
-        grep "ALL 50 TESTS PASS" dgemm_results.txt || exit 1
+        grep "Status: ALL 50 TESTS PASS" dgemm_results.txt || exit 1
     
     - name: Run BLAS L1/L2/L3 Validation (61 ops)
       run: |
